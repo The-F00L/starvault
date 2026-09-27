@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"outline":"#9b8f7c","primary":"#ffcf64","on-surface-variant":"#d2c5af","inverse-surface":"#dfe2eb","surface":"#10141a","secondary":"#a2c9ff","tertiary-fixed-dim":"#96ccff","inverse-primary":"#795900","on-tertiary":"#003353","surface-container":"#1c2026","tertiary-fixed":"#cee5ff","surface-container-low":"#181c22","on-secondary-fixed":"#001c38","error":"#ffb4ab","on-background":"#dfe2eb","on-tertiary-fixed-variant":"#004a76","on-error":"#690005","primary-fixed-dim":"#f1c04c","on-secondary":"#00315c","tertiary-container":"#79c0ff","inverse-on-surface":"#2d3137","on-primary-container":"#5f4600","on-secondary-container":"#f0f4ff","primary-container":"#e3b341","surface-container-high":"#262a31","outline-variant":"#4e4635","surface-tint":"#f1c04c","on-primary-fixed":"#261a00","surface-container-lowest":"#0a0e14","secondary-container":"#0071c7","on-tertiary-container":"#004e7b","surface-dim":"#10141a","primary-fixed":"#ffdf9e","secondary-fixed-dim":"#a2c9ff","on-secondary-fixed-variant":"#004882","tertiary":"#b5d9ff","surface-container-highest":"#31353c","secondary-fixed":"#d3e4ff","on-surface":"#dfe2eb","on-primary":"#3f2e00","error-container":"#93000a","surface-variant":"#31353c","surface-bright":"#353940","on-tertiary-fixed":"#001d32","on-error-container":"#ffdad6","on-primary-fixed-variant":"#5b4300","background":"#10141a"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"gutter":"1rem","space-lg":"1.25rem","margin":"1rem","margin-lg":"2rem","gutter-lg":"1.5rem","space-md":"0.75rem","space-xs":"0.25rem","space-sm":"0.5rem","margin-md":"1.5rem","space-xl":"2rem"},fontFamily:{"headline-xl":["Inter"],"headline-lg":["Inter"],"code-sm":["JetBrains Mono"],"body-sm":["Inter"],"body-md":["Inter"],"label-caps":["JetBrains Mono"],"code-md":["JetBrains Mono"],"body-lg":["Inter"],"headline-xl-mobile":["Inter"],"headline-sm":["Inter"]},fontSize:{"headline-xl":["2.25rem",{"lineHeight":"2.75rem","letterSpacing":"-0.025em","fontWeight":"700"}],"headline-lg":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"600"}],"code-sm":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0em","fontWeight":"500"}],"body-sm":["0.75rem",{"lineHeight":"1.125rem","fontWeight":"400"}],"body-md":["0.875rem",{"lineHeight":"1.375rem","fontWeight":"400"}],"label-caps":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.06em","fontWeight":"600"}],"code-md":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"-0.01em","fontWeight":"500"}],"body-lg":["1rem",{"lineHeight":"1.5rem","fontWeight":"400"}],"headline-xl-mobile":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-sm":["1.125rem",{"lineHeight":"1.5rem","letterSpacing":"-0.015em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface text-on-surface font-body-md text-body-md"><header class="fixed top-0 left-0 right-0 h-16 bg-surface-container-low/95 backdrop-blur-md z-40 border-b border-surface-container-highest flex items-center justify-between px-margin-lg"><div class="flex items-center gap-space-md w-72"><img alt="StarVault Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WzIJ14QURS6PcDdty3Nr5QeHpIEGfA6BAkbyJ8HEYQawccRmErALpDdQhdVQxYWk4e1LIkJXqGc2O_TBRp4DaMSFPSzgpjfURodXnoHWrWPDQ81wCCmPpIw5or5QCV7EQrbyvuIVCBIGGOg_S_fnTtqx_1xItRgkDnhrdY6Ayl3-9rRVP4NCp_cdz69BSE4fhzMJODMs0086EggC_2yQWYbOWkj3Qc2C30NZyPG57acYrw2Ye6T6dJwJIi"/><span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">StarVault</span></div><div class="flex-1 max-w-xl mx-auto px-gutter"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-md text-on-surface-variant pointer-events-none text-[1.125rem]">search</span><input class="w-full h-9 pl-10 pr-16 bg-surface-container-lowest border border-surface-container-highest rounded text-on-surface placeholder:text-on-surface-variant/60 font-body-md text-body-md focus:outline-none focus:border-secondary transition-colors" placeholder="Search stars, lists, topics, readmes..." type="text"/><div class="absolute right-space-sm flex items-center gap-space-xs"><kbd class="px-1.5 py-0.5 bg-surface-container border border-surface-container-highest rounded font-code-sm text-code-sm text-on-surface-variant">⌘</kbd><kbd class="px-1.5 py-0.5 bg-surface-container border border-surface-container-highest rounded font-code-sm text-code-sm text-on-surface-variant">K</kbd></div></div></div><div class="flex items-center gap-space-md"><div class="hidden lg:flex items-center gap-space-xs px-space-sm py-1 bg-surface-container border border-surface-container-highest rounded-full"><span class="material-symbols-outlined text-primary text-[1rem]">star</span><span class="font-code-sm text-code-sm text-on-surface">1,428 Stars synced</span></div><button class="flex items-center gap-space-xs px-space-md py-1.5 bg-surface-container border border-surface-container-highest hover:border-primary-container text-on-surface hover:text-primary transition-all rounded"><span class="material-symbols-outlined text-[1rem]">sync</span><span class="font-label-caps text-label-caps uppercase">Sync</span></button><button class="relative p-1.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded transition-colors"><span class="material-symbols-outlined text-[1.25rem]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-primary"></span></button><div class="flex items-center pl-space-xs border-l border-surface-container-highest"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-surface-container-highest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlxzKjNqln9OeMrnvrvhygv1soiPos9ppfUP4OhHbWi7JcUGStObfMq1xtDbG8_9zeKQmh3he0Qlt5UxF5cjX_rIlXsVb4Y_8hJkBC-c5p_gctk-aYzrSmB-OOc1g8psl-qWN_g7o_e5bfCHJ34vkHYpQ-n08slJqC7hnpjQHUPdFUZFj2DaOLb67jeupabT5nKCrtkcC3ymKO-QcJEqHhDIrkn-ccQ5CMhavJE9Wst88JWMBql7Xw4g"/></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-72 bg-surface-container-low border-r border-surface-container-highest z-30 flex flex-col justify-between overflow-y-auto"><div class="p-space-md"><div class="mb-space-lg"><nav class="flex flex-col gap-space-xs" data-active-classes="bg-surface-container-high text-primary font-bold border-l-2 border-primary"><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="all-stars" href="#"><span class="material-symbols-outlined text-[1.125rem]">stars</span><span class="font-body-md text-body-md">All Stars</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="recently-updated" href="#"><span class="material-symbols-outlined text-[1.125rem]">update</span><span class="font-body-md text-body-md">Recently Updated</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="analytics" href="#"><span class="material-symbols-outlined text-[1.125rem]">monitoring</span><span class="font-body-md text-body-md">Analytics</span></a></nav></div><div class="mb-space-lg"><div class="flex items-center justify-between px-space-md py-1 mb-space-xs text-on-surface-variant font-label-caps text-label-caps uppercase"><span class="tracking-wider">Collections</span><span class="material-symbols-outlined text-[0.875rem] cursor-pointer hover:text-on-surface">add</span></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-surface-container-high text-primary font-bold border-l-2 border-primary"><a aria-current="page" class="flex items-center justify-between px-space-md py-1.5 rounded transition-all bg-surface-container-high text-primary font-bold border-l-2 border-primary" data-path="collections-ai-and-ml" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1rem]">neurology</span><span class="font-body-sm text-body-sm">AI &amp; ML</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/70">284</span></a><a class="flex items-center justify-between px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="collections-frontend-gems" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1rem]">palette</span><span class="font-body-sm text-body-sm">Frontend Gems</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/70">192</span></a><a class="flex items-center justify-between px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="collections-rust-cli" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1rem]">terminal</span><span class="font-body-sm text-body-sm">Rust CLI</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/70">89</span></a><a class="flex items-center justify-between px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="collections-dev-tools" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1rem]">build</span><span class="font-body-sm text-body-sm">Dev Tools</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/70">310</span></a><a class="flex items-center justify-between px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="collections-cloud-native" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1rem]">cloud</span><span class="font-body-sm text-body-sm">Cloud Native</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/70">154</span></a></nav></div><div class="mb-space-lg"><div class="px-space-md py-1 mb-space-xs text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider">Languages</div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-surface-container-high text-primary font-bold border-l-2 border-primary"><a class="flex items-center justify-between px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="language-typescript" href="#"><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-[#3178c6]"></span><span class="font-body-sm text-body-sm">TypeScript</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/70">412</span></a><a class="flex items-center justify-between px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="language-rust" href="#"><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-[#dea584]"></span><span class="font-body-sm text-body-sm">Rust</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/70">230</span></a><a class="flex items-center justify-between px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="language-python" href="#"><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-[#3572A5]"></span><span class="font-body-sm text-body-sm">Python</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/70">342</span></a><a class="flex items-center justify-between px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="language-go" href="#"><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-[#00ADD8]"></span><span class="font-body-sm text-body-sm">Go</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/70">165</span></a><a class="flex items-center justify-between px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="language-cpp" href="#"><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-[#f34b7d]"></span><span class="font-body-sm text-body-sm">C++</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/70">98</span></a></nav></div><div class="mb-space-lg"><nav class="flex flex-col gap-space-xs" data-active-classes="bg-surface-container-high text-primary font-bold border-l-2 border-primary"><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="topics-and-tags" href="#"><span class="material-symbols-outlined text-[1.125rem]">sell</span><span class="font-body-md text-body-md">Topics / Tags</span></a></nav></div></div><div class="p-space-md border-t border-surface-container-highest"><div class="flex items-center justify-between text-on-surface-variant"><div class="flex items-center gap-space-xs font-code-sm text-code-sm"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span>Engine Ready</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/50">v2.4.0</span></div></div></aside><div class="pl-72"><main class="relative pt-16 min-h-screen bg-surface w-full px-gutter-lg py-margin-md"><div class="flex flex-col w-full gap-space-xl">
+<!-- Top Banner / Control Cockpit -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<div class="flex items-center gap-space-xs font-label-caps text-label-caps text-primary tracking-wider uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+<span>Telemetry // Knowledge Indexer</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">
+        Collections &amp; Custom Lists
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Organize your 1,428 stars into focused workspaces, exportable lists, and live synchronization matrices.
+      </p>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-md text-body-md transition-all">
+<span class="material-symbols-outlined text-[1.125rem] text-secondary">tune</span>
+<span>Auto-tag Rules</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-lg py-2 rounded bg-primary text-on-primary font-headline-sm text-headline-sm font-semibold hover:bg-primary-container hover:shadow-lg transition-all" id="open-new-collection-modal">
+<span class="material-symbols-outlined text-[1.25rem]">add_circle</span>
+<span>New Collection</span>
+</button>
+</div>
+</div>
+<!-- Telemetry Metrics Bar -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter bg-surface-container-low p-space-md rounded-xl">
+<div class="flex flex-col p-space-sm bg-surface-container rounded relative overflow-hidden group">
+<div class="absolute -right-3 -top-3 w-16 h-16 rounded-full bg-secondary/10 group-hover:scale-125 transition-transform duration-500"></div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Active Vaults</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface">8</span>
+<span class="font-code-sm text-code-sm text-secondary">+2 this week</span>
+</div>
+</div>
+<div class="flex flex-col p-space-sm bg-surface-container rounded relative overflow-hidden group">
+<div class="absolute -right-3 -top-3 w-16 h-16 rounded-full bg-primary/10 group-hover:scale-125 transition-transform duration-500"></div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Categorized Stars</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface">342</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">/ 1,428 repos</span>
+</div>
+</div>
+<div class="flex flex-col p-space-sm bg-surface-container rounded relative overflow-hidden group">
+<div class="absolute -right-3 -top-3 w-16 h-16 rounded-full bg-error/10 group-hover:scale-125 transition-transform duration-500"></div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Needs Review</span>
+<div class="flex items-baseline justify-between mt-1">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg font-bold text-primary">1,086</span>
+<span class="font-code-sm text-code-sm text-error">Unsorted</span>
+</div>
+<button class="px-space-xs py-0.5 rounded bg-surface-container-high hover:bg-surface-bright text-primary font-code-sm text-code-sm transition-colors" id="quick-triage-scroll-btn">
+          Triage Now →
+        </button>
+</div>
+</div>
+<div class="flex flex-col p-space-sm bg-surface-container rounded relative overflow-hidden group">
+<div class="absolute -right-3 -top-3 w-16 h-16 rounded-full bg-tertiary/10 group-hover:scale-125 transition-transform duration-500"></div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Classification Rules</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface">54</span>
+<span class="font-code-sm text-code-sm text-secondary">98.2% Precision</span>
+</div>
+</div>
+</div>
+<!-- Primary Interactive Dual-Pane Workstation -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-start">
+<!-- Left: Collections Grid (8 Columns) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Managed Collections</span>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-code-sm text-code-sm">6 boards</span>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container p-0.5 rounded">
+<button class="px-space-sm py-1 rounded bg-surface-container-highest text-primary font-code-sm text-code-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[1rem]">grid_view</span> Grid
+          </button>
+<button class="px-space-sm py-1 rounded text-on-surface-variant hover:text-on-surface font-code-sm text-code-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[1rem]">view_kanban</span> Board
+          </button>
+</div>
+</div>
+<!-- Collection Cards 2-Column Responsive Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Collection 1: AI & ML -->
+<div class="group relative rounded-xl bg-surface-container-low hover:bg-surface-container p-space-lg flex flex-col justify-between transition-all duration-300 shadow-md hover:shadow-xl">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-[#b595ff]/15 flex items-center justify-center text-[#d0b8ff]">
+<span class="material-symbols-outlined text-[1.25rem]">neurology</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface group-hover:text-primary transition-colors">AI &amp; Machine Learning</h3>
+<span class="font-code-sm text-code-sm text-[#b595ff]">38 repositories</span>
+</div>
+</div>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-[1.125rem]">more_vert</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+              LLM engines, inference runtimes, agent frameworks, vector databases, and weights fine-tuning toolsets.
+            </p>
+<!-- Repos Avatar Preview Row -->
+<div class="flex items-center gap-space-xs pt-space-xs">
+<div class="flex -space-x-2 overflow-hidden py-1">
+<img class="inline-block h-6 w-6 rounded-full object-cover shadow-sm bg-surface-container-high" data-alt="Dark cybernetic logo icon for ollama with deep ultraviolet glowing contours and sleek minimalism" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjPBMK6SbZXVxsEh97U4w0hKucHisA4cJiDF5jkl_uPpAIK8z-yrwK-1W7ALQyZtRqZcNTkEiwwlJKfqaRZS3j0t6rx8OtIAc4gbELsSttyUC0D3kGLdU0uUbU5NxcYy83OP4pc1oektSGjUyLQ7yCdvbtf-zr8sMqLcFuP1eumepnWGZmHGJlqJht_5ovjY9E4Br5VCopDtooOK0yw40PvMZ2fpEarmCamOZrWJERijUrQOXUxNwieg"/>
+<img class="inline-block h-6 w-6 rounded-full object-cover shadow-sm bg-surface-container-high" data-alt="Abstract dynamic neural network vector insignia with vibrant cyan and violet gradients against dark backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGC_jpzSEMtn80tUUH5HIggtTsAOJRYCxyciF3Sb6D85EQFdE9inp50j4L6ejo5uXiSw-Vqc43nxXNXKrXi3Fcu5zcEO3purjYUGvbfOsagwqFO5Cj8VbopN3HHjhQIlsi6MOIpJEZykX9Squ-GTR0XS4DLo2lxu7LNKlvzjU0ycS0Vb4P11LPDz7UUUptWI9pxKSOyM1aj3ok1mlo0FsSVVBO_ZYQeSaMPdiTSfqFfwS8pcIhp7g6TA"/>
+<img class="inline-block h-6 w-6 rounded-full object-cover shadow-sm bg-surface-container-high" data-alt="High tech terminal glyph icon representing langchain with angular gold accents on black canvas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPXUfgWlrRT2hXGx8WrWX5e1UM-cfK82bP8nBdbaomWZuoDsVjo6I3Gt8utenHSr1qk7pHnkrbFE8lcVBp3dvY4JZ1VSTyN8qPLQzRGnQFrzWdwo5hDzYcfJQRLLYbizT6F2gsDR3EcAlnBMdGYfC9G4WQYShM_-nxuB1MZkrWx8sWqmxC4Veg5L0DGRpEEcgBlsvlonjr82trQsprtrq3JidSzztVrnSnukKirOyM3jD3WtOzDiJAKQ"/>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant/70 pl-space-xs">ollama, vllm, langchain...</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-md border-t-0 bg-surface-container-lowest/40 -mx-space-lg -mb-space-lg px-space-lg py-2.5 rounded-b-xl">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Updated 2h ago</span>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[1rem] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-code-sm text-code-sm text-on-surface font-medium">94.8k stars pooled</span>
+</div>
+</div>
+</div>
+<!-- Collection 2: Frontend Gems -->
+<div class="group relative rounded-xl bg-surface-container-low hover:bg-surface-container p-space-lg flex flex-col justify-between transition-all duration-300 shadow-md hover:shadow-xl">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-[#58a6ff]/15 flex items-center justify-center text-[#79c0ff]">
+<span class="material-symbols-outlined text-[1.25rem]">palette</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Frontend Gems</h3>
+<span class="font-code-sm text-code-sm text-[#79c0ff]">52 repositories</span>
+</div>
+</div>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-[1.125rem]">more_vert</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+              Modern UI component libraries, animations, CSS toolkits, design engineering tokens, and icon sets.
+            </p>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<div class="flex -space-x-2 overflow-hidden py-1">
+<img class="inline-block h-6 w-6 rounded-full object-cover shadow-sm bg-surface-container-high" data-alt="Monochrome sharp geometric logo for shadcn component suite on deep slate carbon background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBd7AktL1561eZV6MWmAPiYGh2vezj1HmCfeChrbjnYx68Vv5ii3AywV_vOPfaXaha1HVUqc38CxBgOD1UpNMCjoh0yQzILqPFQTnwgM-GrpXuEVl7kGVcJy2gIk6SDlMy0QErXok9a0kceSH9KjSIGEy0adQqa1Cpg2wCog64xFBYKZKVRTcqu_UX9DgoV0r7-nzrwiCUAfP2knKfwQaw_4ZxpdXlZWustVNI8499FIz_V9u1LAQ6Mxw"/>
+<img class="inline-block h-6 w-6 rounded-full object-cover shadow-sm bg-surface-container-high" data-alt="Electric azure motion curves fluid shape rendering visual design asset against dark mode UI palette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiPAIkdUlsB3Q7eV0_j12lYjMbXeJU_9MJdHhSz2-vREibSgxelQk5EiMglH9GdSb3cULsOppJdAoyYNO6-l6h1or86kL5UxMJ4UvZyZuU891lwW1KrK8sBvWZ4R2fhXUBf3qeO6fmwNjuj8rqBZbiHiOn7qb970RrEbUUAdfgqpz2dxMgXXTsQ07Td4kx2G3klk9a-ffGHWFZwcUNSXW1Af5Ra7SnlZGSU6DZON6QQuZ39hlTNX2QKA"/>
+<img class="inline-block h-6 w-6 rounded-full object-cover shadow-sm bg-surface-container-high" data-alt="Clean luminous vector icon symbol set graphic preview with soft blue glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgiK0FJSJIjU9FlMHEx1FvH7oUrcSAZq4MzbZO0tl76IPfrcTamhjujGXRZ5NpilZd46o5JfMap-Q3y8f7ndUcEAvnMReGPJSWUBoLX5v6NPGdDkt0xKU_nVzAPSutrURz_PWDzQzCCwM9FBhMLsu0_AK-ukKIvsyNn-r83NdBR4wUrDDWHHRC7r32BOKsALdnCPc9UEGRn5e5Tnje7Px-mOdBcFb71IV1UnNa_vQ7n16B48QnRPw84Q"/>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant/70 pl-space-xs">shadcn-ui, motion, lucide</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-md bg-surface-container-lowest/40 -mx-space-lg -mb-space-lg px-space-lg py-2.5 rounded-b-xl">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Updated Yesterday</span>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[1rem] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-code-sm text-code-sm text-on-surface font-medium">142.1k stars pooled</span>
+</div>
+</div>
+</div>
+<!-- Collection 3: Rust CLI & Utilities -->
+<div class="group relative rounded-xl bg-surface-container-low hover:bg-surface-container p-space-lg flex flex-col justify-between transition-all duration-300 shadow-md hover:shadow-xl">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-[#ff9858]/15 flex items-center justify-center text-[#ffb587]">
+<span class="material-symbols-outlined text-[1.25rem]">terminal</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Rust CLI &amp; Utilities</h3>
+<span class="font-code-sm text-code-sm text-[#ffb587]">29 repositories</span>
+</div>
+</div>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-[1.125rem]">more_vert</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+              High performance command-line tools replacing legacy unix utilities with blazing fast memory safety.
+            </p>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<div class="flex -space-x-2 overflow-hidden py-1">
+<div class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-surface-container-high font-code-sm text-code-sm text-primary">uv</div>
+<div class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-surface-container-highest font-code-sm text-code-sm text-secondary">rg</div>
+<div class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-surface-container-high font-code-sm text-code-sm text-[#ffb587]">bat</div>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant/70 pl-space-xs">uv, ripgrep, bat, eza</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-md bg-surface-container-lowest/40 -mx-space-lg -mb-space-lg px-space-lg py-2.5 rounded-b-xl">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Updated 4d ago</span>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[1rem] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-code-sm text-code-sm text-on-surface font-medium">88.4k stars pooled</span>
+</div>
+</div>
+</div>
+<!-- Collection 4: Cloud Native & Infra -->
+<div class="group relative rounded-xl bg-surface-container-low hover:bg-surface-container p-space-lg flex flex-col justify-between transition-all duration-300 shadow-md hover:shadow-xl">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-[#2cd4bf]/15 flex items-center justify-center text-[#5eead4]">
+<span class="material-symbols-outlined text-[1.25rem]">cloud</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Cloud Native &amp; Infra</h3>
+<span class="font-code-sm text-code-sm text-[#5eead4]">44 repositories</span>
+</div>
+</div>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-[1.125rem]">more_vert</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+              Kubernetes operators, service meshes, eBPF telemetry, declarative provisioning, and cloud controllers.
+            </p>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<div class="flex -space-x-2 overflow-hidden py-1">
+<div class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-surface-container-high font-code-sm text-code-sm text-[#5eead4]">k8s</div>
+<div class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-surface-container-highest font-code-sm text-code-sm text-secondary">cil</div>
+<div class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-surface-container-high font-code-sm text-code-sm text-primary">tf</div>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant/70 pl-space-xs">cilium, k9s, crossplane</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-md bg-surface-container-lowest/40 -mx-space-lg -mb-space-lg px-space-lg py-2.5 rounded-b-xl">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Updated 1w ago</span>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[1rem] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-code-sm text-code-sm text-on-surface font-medium">112.9k stars pooled</span>
+</div>
+</div>
+</div>
+<!-- Collection 5: Database Engines & ORMs -->
+<div class="group relative rounded-xl bg-surface-container-low hover:bg-surface-container p-space-lg flex flex-col justify-between transition-all duration-300 shadow-md hover:shadow-xl">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-[#34d399]/15 flex items-center justify-center text-[#6ee7b7]">
+<span class="material-symbols-outlined text-[1.25rem]">database</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Database Engines &amp; ORMs</h3>
+<span class="font-code-sm text-code-sm text-[#6ee7b7]">21 repositories</span>
+</div>
+</div>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-[1.125rem]">more_vert</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+              SQLite internals, embedded key-value engines, distributed Raft consensus, vector search indexes, and type-safe query builders.
+            </p>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<div class="flex -space-x-2 overflow-hidden py-1">
+<div class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-surface-container-high font-code-sm text-code-sm text-[#6ee7b7]">sql</div>
+<div class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-surface-container-highest font-code-sm text-code-sm text-primary">qdr</div>
+<div class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-surface-container-high font-code-sm text-code-sm text-secondary">driz</div>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant/70 pl-space-xs">duckdb, drizzle, qdrant</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-md bg-surface-container-lowest/40 -mx-space-lg -mb-space-lg px-space-lg py-2.5 rounded-b-xl">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Updated 3d ago</span>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[1rem] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-code-sm text-code-sm text-on-surface font-medium">67.3k stars pooled</span>
+</div>
+</div>
+</div>
+<!-- Collection 6: Developer Productivity -->
+<div class="group relative rounded-xl bg-surface-container-low hover:bg-surface-container p-space-lg flex flex-col justify-between transition-all duration-300 shadow-md hover:shadow-xl">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-[#f472b6]/15 flex items-center justify-center text-[#fbcfe8]">
+<span class="material-symbols-outlined text-[1.25rem]">speed</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Developer Productivity</h3>
+<span class="font-code-sm text-code-sm text-[#fbcfe8]">63 repositories</span>
+</div>
+</div>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-[1.125rem]">more_vert</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+              Curated dotfiles, terminal emulators, zsh custom prompts, tmux hyper-configurations, and neovim lua scripts.
+            </p>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<div class="flex -space-x-2 overflow-hidden py-1">
+<div class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-surface-container-high font-code-sm text-code-sm text-[#fbcfe8]">zsh</div>
+<div class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-surface-container-highest font-code-sm text-code-sm text-primary">nvim</div>
+<div class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-surface-container-high font-code-sm text-code-sm text-secondary">wez</div>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant/70 pl-space-xs">astronvim, wezterm, raycast</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-md bg-surface-container-lowest/40 -mx-space-lg -mb-space-lg px-space-lg py-2.5 rounded-b-xl">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Updated 5h ago</span>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[1rem] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-code-sm text-code-sm text-on-surface font-medium">189.5k stars pooled</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Quick Triage & Drag-Drop Dock (4 Columns) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md bg-surface-container-low p-space-md rounded-xl" id="triage-panel">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[1.25rem] text-primary">inbox</span>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Unsorted Stars</h2>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-code-sm text-code-sm">1,086 pending</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Triage newly starred repositories into your custom workspaces with one keystroke or fast assignment.
+      </p>
+<!-- Triage Items Queue -->
+<div class="flex flex-col gap-space-sm mt-space-xs" id="triage-queue">
+<!-- Item 1 -->
+<div class="flex flex-col gap-space-xs p-space-md bg-surface-container rounded-lg hover:bg-surface-container-high transition-all" data-repo-id="1">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-xs truncate">
+<span class="font-code-sm text-code-sm text-secondary font-semibold">ggerganov</span>
+<span class="text-on-surface-variant/40">/</span>
+<span class="font-code-sm text-code-sm text-on-surface font-bold truncate">llama.cpp</span>
+</div>
+<div class="flex items-center gap-1 font-code-sm text-code-sm text-primary">
+<span class="material-symbols-outlined text-[0.875rem]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>71.2k</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">
+            LLM inference in C/C++ with zero dependencies and pure metal acceleration.
+          </p>
+<div class="flex flex-wrap items-center gap-1.5 pt-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant/70 uppercase">Assign:</span>
+<button class="px-2 py-0.5 rounded bg-surface-container-highest hover:bg-primary hover:text-on-primary text-[#b595ff] font-code-sm text-code-sm transition-colors" onclick="assignRepo(1, 'AI &amp; ML')">
+              + AI &amp; ML
+            </button>
+<button class="px-2 py-0.5 rounded bg-surface-container-highest hover:bg-primary hover:text-on-primary text-[#ffb587] font-code-sm text-code-sm transition-colors" onclick="assignRepo(1, 'Rust/C++')">
+              + Infra
+            </button>
+<button class="ml-auto p-1 text-on-surface-variant hover:text-error transition-colors" onclick="dismissRepo(1)" title="Skip or archive">
+<span class="material-symbols-outlined text-[1rem]">close</span>
+</button>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex flex-col gap-space-xs p-space-md bg-surface-container rounded-lg hover:bg-surface-container-high transition-all" data-repo-id="2">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-xs truncate">
+<span class="font-code-sm text-code-sm text-secondary font-semibold">astral-sh</span>
+<span class="text-on-surface-variant/40">/</span>
+<span class="font-code-sm text-code-sm text-on-surface font-bold truncate">uv</span>
+</div>
+<div class="flex items-center gap-1 font-code-sm text-code-sm text-primary">
+<span class="material-symbols-outlined text-[0.875rem]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>38.4k</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">
+            An extremely fast Python package and project manager, written in Rust.
+          </p>
+<div class="flex flex-wrap items-center gap-1.5 pt-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant/70 uppercase">Assign:</span>
+<button class="px-2 py-0.5 rounded bg-surface-container-highest hover:bg-primary hover:text-on-primary text-[#ffb587] font-code-sm text-code-sm transition-colors" onclick="assignRepo(2, 'Rust CLI')">
+              + Rust CLI
+            </button>
+<button class="px-2 py-0.5 rounded bg-surface-container-highest hover:bg-primary hover:text-on-primary text-[#fbcfe8] font-code-sm text-code-sm transition-colors" onclick="assignRepo(2, 'Dev Productivity')">
+              + Dev Tools
+            </button>
+<button class="ml-auto p-1 text-on-surface-variant hover:text-error transition-colors" onclick="dismissRepo(2)" title="Skip or archive">
+<span class="material-symbols-outlined text-[1rem]">close</span>
+</button>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex flex-col gap-space-xs p-space-md bg-surface-container rounded-lg hover:bg-surface-container-high transition-all" data-repo-id="3">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-xs truncate">
+<span class="font-code-sm text-code-sm text-secondary font-semibold">tailwindlabs</span>
+<span class="text-on-surface-variant/40">/</span>
+<span class="font-code-sm text-code-sm text-on-surface font-bold truncate">tailwindcss-oxide</span>
+</div>
+<div class="flex items-center gap-1 font-code-sm text-code-sm text-primary">
+<span class="material-symbols-outlined text-[0.875rem]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>12.7k</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">
+            Next-generation unified Rust engine for Tailwind CSS v4 compiler.
+          </p>
+<div class="flex flex-wrap items-center gap-1.5 pt-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant/70 uppercase">Assign:</span>
+<button class="px-2 py-0.5 rounded bg-surface-container-highest hover:bg-primary hover:text-on-primary text-[#79c0ff] font-code-sm text-code-sm transition-colors" onclick="assignRepo(3, 'Frontend Gems')">
+              + Frontend
+            </button>
+<button class="px-2 py-0.5 rounded bg-surface-container-highest hover:bg-primary hover:text-on-primary text-[#ffb587] font-code-sm text-code-sm transition-colors" onclick="assignRepo(3, 'Rust CLI')">
+              + Rust
+            </button>
+<button class="ml-auto p-1 text-on-surface-variant hover:text-error transition-colors" onclick="dismissRepo(3)" title="Skip or archive">
+<span class="material-symbols-outlined text-[1rem]">close</span>
+</button>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="flex flex-col gap-space-xs p-space-md bg-surface-container rounded-lg hover:bg-surface-container-high transition-all" data-repo-id="4">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-xs truncate">
+<span class="font-code-sm text-code-sm text-secondary font-semibold">tursodatabase</span>
+<span class="text-on-surface-variant/40">/</span>
+<span class="font-code-sm text-code-sm text-on-surface font-bold truncate">libsql</span>
+</div>
+<div class="flex items-center gap-1 font-code-sm text-code-sm text-primary">
+<span class="material-symbols-outlined text-[0.875rem]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>15.3k</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">
+            libSQL is an open-source, open-contribution fork of SQLite with async replication.
+          </p>
+<div class="flex flex-wrap items-center gap-1.5 pt-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant/70 uppercase">Assign:</span>
+<button class="px-2 py-0.5 rounded bg-surface-container-highest hover:bg-primary hover:text-on-primary text-[#6ee7b7] font-code-sm text-code-sm transition-colors" onclick="assignRepo(4, 'Database Engines')">
+              + Database
+            </button>
+<button class="px-2 py-0.5 rounded bg-surface-container-highest hover:bg-primary hover:text-on-primary text-[#5eead4] font-code-sm text-code-sm transition-colors" onclick="assignRepo(4, 'Cloud Native')">
+              + Infra
+            </button>
+<button class="ml-auto p-1 text-on-surface-variant hover:text-error transition-colors" onclick="dismissRepo(4)" title="Skip or archive">
+<span class="material-symbols-outlined text-[1rem]">close</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Quick Drag-Target Zone -->
+<div class="mt-space-sm p-space-md rounded-lg bg-surface-container-lowest border-dashed border-2 border-surface-container-highest flex flex-col items-center justify-center text-center group cursor-pointer hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[1.75rem] text-on-surface-variant group-hover:text-primary transition-colors">auto_fix_high</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium mt-1">Batch Auto-Classify (AI Powered)</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant/70 mt-0.5">Categorize top 100 based on repository topics</span>
+</div>
+</div>
+</div>
+<!-- Export, Sync & Sharing Matrix -->
+<div class="flex flex-col gap-space-md p-space-lg bg-surface-container-low rounded-xl">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Export &amp; Share Knowledge Hubs</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Publish collections directly as curated Awesome-Lists or bidirectional GitHub Star Lists.</p>
+</div>
+<div class="flex items-center gap-space-xs flex-wrap">
+<button class="flex items-center gap-space-xs px-space-md py-1.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-code-sm text-code-sm transition-all" id="copy-markdown-btn">
+<span class="material-symbols-outlined text-[1rem] text-secondary">markdown</span>
+<span>Awesome-List Markdown</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-1.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-code-sm text-code-sm transition-all">
+<span class="material-symbols-outlined text-[1rem] text-primary">sync_alt</span>
+<span>Sync to GitHub Lists</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-1.5 rounded bg-secondary-container hover:bg-secondary text-on-secondary-container hover:text-on-secondary font-code-sm text-code-sm font-semibold transition-all" id="copy-url-btn">
+<span class="material-symbols-outlined text-[1rem]">share</span>
+<span>Public URL: starvault.dev/@alex/ai-ml</span>
+</button>
+</div>
+</div>
+<!-- Live Preview Code Block Snippet -->
+<div class="flex flex-col bg-surface-container-lowest p-space-md rounded-lg font-code-sm text-code-sm text-on-surface-variant overflow-x-auto">
+<div class="flex items-center justify-between pb-space-xs mb-space-xs text-on-surface-variant/60 font-label-caps text-label-caps uppercase">
+<span>Markdown Preview // AI-Machine-Learning.md</span>
+<span>Generated Just Now</span>
+</div>
+<pre class="leading-relaxed"><code># Awesome AI &amp; Machine Learning Tools 🌟
+
+Curated collection generated automatically via [StarVault](https://starvault.dev/@alex).
+Last synced: 2025-05-18 • 38 repositories tracked
+
+- [llama.cpp](https://github.com/ggerganov/llama.cpp) - Port of Facebook's LLaMA model in C/C++ ⭐ 71.2k
+- [vllm](https://github.com/vllm-project/vllm) - A high-throughput and memory-efficient inference engine ⭐ 32.1k
+- [langchain](https://github.com/langchain-ai/langchain) - Building applications with LLMs through composability ⭐ 91.5k</code></pre>
+</div>
+</div>
+<!-- Notification Toast Container -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 pointer-events-none" id="toast-container"></div>
+<!-- Inline Interaction Logic -->
+<script>
+    function showToast(message, icon = 'check_circle') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = 'pointer-events-auto flex items-center gap-space-xs px-space-md py-space-sm bg-surface-container-highest text-on-surface rounded shadow-xl font-body-sm text-body-sm transition-all transform translate-y-4 opacity-0';
+      toast.innerHTML = `<span class="material-symbols-outlined text-primary text-[1.125rem]">${icon}</span><span>${message}</span>`;
+      container.appendChild(toast);
+      
+      requestAnimationFrame(() => {
+        toast.classList.remove('translate-y-4', 'opacity-0');
+      });
+
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+      }, 2600);
+    }
+
+    function assignRepo(repoId, collectionName) {
+      const card = document.querySelector(`[data-repo-id="${repoId}"]`);
+      if (card) {
+        card.style.transform = 'translateX(20px)';
+        card.style.opacity = '0';
+        setTimeout(() => {
+          card.remove();
+          showToast(`Repository assigned to "${collectionName}"`);
+        }, 200);
+      }
+    }
+
+    function dismissRepo(repoId) {
+      const card = document.querySelector(`[data-repo-id="${repoId}"]`);
+      if (card) {
+        card.style.transform = 'scale(0.95)';
+        card.style.opacity = '0';
+        setTimeout(() => {
+          card.remove();
+          showToast('Star skipped for now', 'remove_done');
+        }, 150);
+      }
+    }
+
+    document.getElementById('copy-markdown-btn')?.addEventListener('click', () => {
+      navigator.clipboard?.writeText('# Awesome AI & Machine Learning Tools\n- llama.cpp\n- vllm');
+      showToast('Awesome-List Markdown copied to clipboard', 'content_copy');
+    });
+
+    document.getElementById('copy-url-btn')?.addEventListener('click', () => {
+      navigator.clipboard?.writeText('https://starvault.dev/@alex/ai-ml');
+      showToast('Public Collection link copied!', 'link');
+    });
+
+    document.getElementById('quick-triage-scroll-btn')?.addEventListener('click', () => {
+      document.getElementById('triage-panel')?.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.getElementById('open-new-collection-modal')?.addEventListener('click', () => {
+      showToast('Create Collection modal initialized', 'create_new_folder');
+    });
+  </script>
+</div></main></div></body></html>

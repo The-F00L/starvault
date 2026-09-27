@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"outline":"#9b8f7c","primary":"#ffcf64","on-surface-variant":"#d2c5af","inverse-surface":"#dfe2eb","surface":"#10141a","secondary":"#a2c9ff","tertiary-fixed-dim":"#96ccff","inverse-primary":"#795900","on-tertiary":"#003353","surface-container":"#1c2026","tertiary-fixed":"#cee5ff","surface-container-low":"#181c22","on-secondary-fixed":"#001c38","error":"#ffb4ab","on-background":"#dfe2eb","on-tertiary-fixed-variant":"#004a76","on-error":"#690005","primary-fixed-dim":"#f1c04c","on-secondary":"#00315c","tertiary-container":"#79c0ff","inverse-on-surface":"#2d3137","on-primary-container":"#5f4600","on-secondary-container":"#f0f4ff","primary-container":"#e3b341","surface-container-high":"#262a31","outline-variant":"#4e4635","surface-tint":"#f1c04c","on-primary-fixed":"#261a00","surface-container-lowest":"#0a0e14","secondary-container":"#0071c7","on-tertiary-container":"#004e7b","surface-dim":"#10141a","primary-fixed":"#ffdf9e","secondary-fixed-dim":"#a2c9ff","on-secondary-fixed-variant":"#004882","tertiary":"#b5d9ff","surface-container-highest":"#31353c","secondary-fixed":"#d3e4ff","on-surface":"#dfe2eb","on-primary":"#3f2e00","error-container":"#93000a","surface-variant":"#31353c","surface-bright":"#353940","on-tertiary-fixed":"#001d32","on-error-container":"#ffdad6","on-primary-fixed-variant":"#5b4300","background":"#10141a"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"gutter":"1rem","space-lg":"1.25rem","margin":"1rem","margin-lg":"2rem","gutter-lg":"1.5rem","space-md":"0.75rem","space-xs":"0.25rem","space-sm":"0.5rem","margin-md":"1.5rem","space-xl":"2rem"},fontFamily:{"headline-xl":["Inter"],"headline-lg":["Inter"],"code-sm":["JetBrains Mono"],"body-sm":["Inter"],"body-md":["Inter"],"label-caps":["JetBrains Mono"],"code-md":["JetBrains Mono"],"body-lg":["Inter"],"headline-xl-mobile":["Inter"],"headline-sm":["Inter"]},fontSize:{"headline-xl":["2.25rem",{"lineHeight":"2.75rem","letterSpacing":"-0.025em","fontWeight":"700"}],"headline-lg":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"600"}],"code-sm":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0em","fontWeight":"500"}],"body-sm":["0.75rem",{"lineHeight":"1.125rem","fontWeight":"400"}],"body-md":["0.875rem",{"lineHeight":"1.375rem","fontWeight":"400"}],"label-caps":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.06em","fontWeight":"600"}],"code-md":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"-0.01em","fontWeight":"500"}],"body-lg":["1rem",{"lineHeight":"1.5rem","fontWeight":"400"}],"headline-xl-mobile":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-sm":["1.125rem",{"lineHeight":"1.5rem","letterSpacing":"-0.015em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface text-on-surface font-body-md text-body-md"><header class="fixed top-0 left-0 right-0 h-16 bg-surface-container-low/95 backdrop-blur-md z-40 border-b border-surface-container-highest flex items-center justify-between px-margin-lg"><div class="flex items-center gap-space-md w-72"><img alt="StarVault Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WzIJ14QURS6PcDdty3Nr5QeHpIEGfA6BAkbyJ8HEYQawccRmErALpDdQhdVQxYWk4e1LIkJXqGc2O_TBRp4DaMSFPSzgpjfURodXnoHWrWPDQ81wCCmPpIw5or5QCV7EQrbyvuIVCBIGGOg_S_fnTtqx_1xItRgkDnhrdY6Ayl3-9rRVP4NCp_cdz69BSE4fhzMJODMs0086EggC_2yQWYbOWkj3Qc2C30NZyPG57acYrw2Ye6T6dJwJIi"/><span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">StarVault</span></div><div class="flex-1 max-w-xl mx-auto px-gutter"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-md text-on-surface-variant pointer-events-none text-[1.125rem]">search</span><input class="w-full h-9 pl-10 pr-16 bg-surface-container-lowest border border-surface-container-highest rounded text-on-surface placeholder:text-on-surface-variant/60 font-body-md text-body-md focus:outline-none focus:border-secondary transition-colors" placeholder="Search stars, lists, topics, readmes..." type="text"/><div class="absolute right-space-sm flex items-center gap-space-xs"><kbd class="px-1.5 py-0.5 bg-surface-container border border-surface-container-highest rounded font-code-sm text-code-sm text-on-surface-variant">⌘</kbd><kbd class="px-1.5 py-0.5 bg-surface-container border border-surface-container-highest rounded font-code-sm text-code-sm text-on-surface-variant">K</kbd></div></div></div><div class="flex items-center gap-space-md"><div class="hidden lg:flex items-center gap-space-xs px-space-sm py-1 bg-surface-container border border-surface-container-highest rounded-full"><span class="material-symbols-outlined text-primary text-[1rem]">star</span><span class="font-code-sm text-code-sm text-on-surface">1,428 Stars synced</span></div><button class="flex items-center gap-space-xs px-space-md py-1.5 bg-surface-container border border-surface-container-highest hover:border-primary-container text-on-surface hover:text-primary transition-all rounded"><span class="material-symbols-outlined text-[1rem]">sync</span><span class="font-label-caps text-label-caps uppercase">Sync</span></button><button class="relative p-1.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded transition-colors"><span class="material-symbols-outlined text-[1.25rem]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-primary"></span></button><div class="flex items-center pl-space-xs border-l border-surface-container-highest"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-surface-container-highest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlxzKjNqln9OeMrnvrvhygv1soiPos9ppfUP4OhHbWi7JcUGStObfMq1xtDbG8_9zeKQmh3he0Qlt5UxF5cjX_rIlXsVb4Y_8hJkBC-c5p_gctk-aYzrSmB-OOc1g8psl-qWN_g7o_e5bfCHJ34vkHYpQ-n08slJqC7hnpjQHUPdFUZFj2DaOLb67jeupabT5nKCrtkcC3ymKO-QcJEqHhDIrkn-ccQ5CMhavJE9Wst88JWMBql7Xw4g"/></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-72 bg-surface-container-low border-r border-surface-container-highest z-30 flex flex-col justify-between overflow-y-auto"><div class="p-space-md"><div class="mb-space-lg"><nav class="flex flex-col gap-space-xs" data-active-classes="bg-surface-container-high text-primary font-bold border-l-2 border-primary"><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-2 rounded transition-all bg-surface-container-high text-primary font-bold border-l-2 border-primary" data-path="all-stars" href="#"><span class="material-symbols-outlined text-[1.125rem]">stars</span><span class="font-body-md text-body-md">All Stars</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="recently-updated" href="#"><span class="material-symbols-outlined text-[1.125rem]">update</span><span class="font-body-md text-body-md">Recently Updated</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="analytics" href="#"><span class="material-symbols-outlined text-[1.125rem]">monitoring</span><span class="font-body-md text-body-md">Analytics</span></a></nav></div><div class="mb-space-lg"><div class="flex items-center justify-between px-space-md py-1 mb-space-xs text-on-surface-variant font-label-caps text-label-caps uppercase"><span class="tracking-wider">Collections</span><span class="material-symbols-outlined text-[0.875rem] cursor-pointer hover:text-on-surface">add</span></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-surface-container-high text-primary font-bold border-l-2 border-primary"><a class="flex items-center justify-between px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="collections-ai-and-ml" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1rem]">neurology</span><span class="font-body-sm text-body-sm">AI &amp; ML</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/70">284</span></a><a class="flex items-center justify-between px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="collections-frontend-gems" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1rem]">palette</span><span class="font-body-sm text-body-sm">Frontend Gems</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/70">192</span></a><a class="flex items-center justify-between px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="collections-rust-cli" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1rem]">terminal</span><span class="font-body-sm text-body-sm">Rust CLI</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/70">89</span></a><a class="flex items-center justify-between px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="collections-dev-tools" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1rem]">build</span><span class="font-body-sm text-body-sm">Dev Tools</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/70">310</span></a><a class="flex items-center justify-between px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="collections-cloud-native" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1rem]">cloud</span><span class="font-body-sm text-body-sm">Cloud Native</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/70">154</span></a></nav></div><div class="mb-space-lg"><div class="px-space-md py-1 mb-space-xs text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider">Languages</div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-surface-container-high text-primary font-bold border-l-2 border-primary"><a class="flex items-center justify-between px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="language-typescript" href="#"><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-[#3178c6]"></span><span class="font-body-sm text-body-sm">TypeScript</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/70">412</span></a><a class="flex items-center justify-between px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="language-rust" href="#"><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-[#dea584]"></span><span class="font-body-sm text-body-sm">Rust</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/70">230</span></a><a class="flex items-center justify-between px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="language-python" href="#"><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-[#3572A5]"></span><span class="font-body-sm text-body-sm">Python</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/70">342</span></a><a class="flex items-center justify-between px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="language-go" href="#"><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-[#00ADD8]"></span><span class="font-body-sm text-body-sm">Go</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/70">165</span></a><a class="flex items-center justify-between px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="language-cpp" href="#"><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-[#f34b7d]"></span><span class="font-body-sm text-body-sm">C++</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/70">98</span></a></nav></div><div class="mb-space-lg"><nav class="flex flex-col gap-space-xs" data-active-classes="bg-surface-container-high text-primary font-bold border-l-2 border-primary"><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="topics-and-tags" href="#"><span class="material-symbols-outlined text-[1.125rem]">sell</span><span class="font-body-md text-body-md">Topics / Tags</span></a></nav></div></div><div class="p-space-md border-t border-surface-container-highest"><div class="flex items-center justify-between text-on-surface-variant"><div class="flex items-center gap-space-xs font-code-sm text-code-sm"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span>Engine Ready</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/50">v2.4.0</span></div></div></aside><div class="pl-72"><main class="relative pt-16 min-h-screen bg-surface w-full px-gutter-lg py-margin-md"><div class="flex flex-col w-full">
+<!-- Dynamic Atmospheric Glow Backdrop -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-32 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-20 right-0 w-80 h-80 bg-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Section 1: Executive Control Hub & Omnibar Filters -->
+<div class="relative flex flex-col gap-space-md mb-space-xl">
+<!-- High-Tier Controls Row -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md bg-surface-container-low p-space-md rounded-xl shadow-md">
+<!-- Left: Query Density & Quick Filter Cluster -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Language Selector Pill -->
+<div class="relative inline-block" id="langDropdown">
+<button class="flex items-center gap-space-xs px-space-md py-1.5 bg-surface-container hover:bg-surface-container-high text-on-surface rounded font-code-sm text-code-sm transition-colors" onclick="document.getElementById('langMenu').classList.toggle('hidden')">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>Language: <strong class="text-primary font-semibold">All (14)</strong></span>
+<span class="material-symbols-outlined text-[1rem] text-on-surface-variant">expand_more</span>
+</button>
+<div class="hidden absolute left-0 mt-1 w-48 bg-surface-container-high rounded-lg shadow-xl z-30 py-1" id="langMenu">
+<a class="flex items-center justify-between px-space-md py-1.5 text-primary hover:bg-surface-container font-code-sm text-code-sm" href="#">
+<span>All Ecosystems</span>
+<span class="material-symbols-outlined text-[0.875rem]">check</span>
+</a>
+<a class="flex items-center gap-space-sm px-space-md py-1.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-code-sm text-code-sm" href="#">
+<span class="w-2 h-2 rounded-full bg-[#3178c6]"></span> TypeScript (412)
+              </a>
+<a class="flex items-center gap-space-sm px-space-md py-1.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-code-sm text-code-sm" href="#">
+<span class="w-2 h-2 rounded-full bg-[#dea584]"></span> Rust (230)
+              </a>
+<a class="flex items-center gap-space-sm px-space-md py-1.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-code-sm text-code-sm" href="#">
+<span class="w-2 h-2 rounded-full bg-[#3572A5]"></span> Python (342)
+              </a>
+<a class="flex items-center gap-space-sm px-space-md py-1.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-code-sm text-code-sm" href="#">
+<span class="w-2 h-2 rounded-full bg-[#00ADD8]"></span> Go (165)
+              </a>
+</div>
+</div>
+<!-- Sort Order Dropdown Pill -->
+<div class="relative inline-block">
+<button class="flex items-center gap-space-xs px-space-md py-1.5 bg-surface-container hover:bg-surface-container-high text-on-surface rounded font-code-sm text-code-sm transition-colors">
+<span class="material-symbols-outlined text-[1rem] text-secondary">sort</span>
+<span>Sort: <span class="text-on-surface font-medium">Recently Starred</span></span>
+<span class="material-symbols-outlined text-[1rem] text-on-surface-variant">expand_more</span>
+</button>
+</div>
+<!-- Active Tag Filters -->
+<div class="flex items-center gap-space-xs overflow-x-auto py-0.5">
+<span class="flex items-center gap-1 px-space-sm py-1 bg-surface-container-high text-secondary text-code-sm font-code-sm rounded-full">
+              #web-framework
+              <button class="hover:text-primary"><span class="material-symbols-outlined text-[0.875rem]">close</span></button>
+</span>
+<span class="flex items-center gap-1 px-space-sm py-1 bg-surface-container-high text-secondary text-code-sm font-code-sm rounded-full">
+              #developer-tools
+              <button class="hover:text-primary"><span class="material-symbols-outlined text-[0.875rem]">close</span></button>
+</span>
+<span class="flex items-center gap-1 px-space-sm py-1 bg-surface-container-high text-secondary text-code-sm font-code-sm rounded-full">
+              #llm
+              <button class="hover:text-primary"><span class="material-symbols-outlined text-[0.875rem]">close</span></button>
+</span>
+<span class="flex items-center gap-1 px-space-sm py-1 bg-surface-container-high text-secondary text-code-sm font-code-sm rounded-full">
+              #wasm
+              <button class="hover:text-primary"><span class="material-symbols-outlined text-[0.875rem]">close</span></button>
+</span>
+<button class="text-on-surface-variant hover:text-primary text-code-sm font-code-sm ml-1 underline decoration-dotted">Clear All</button>
+</div>
+</div>
+<!-- Right: View Mode Toggle & Executive Actions -->
+<div class="flex items-center gap-space-sm flex-shrink-0">
+<!-- View Toggle -->
+<div class="flex items-center bg-surface-container p-0.5 rounded">
+<button class="p-1.5 rounded bg-surface-container-high text-primary shadow-sm" title="Rich Cards Grid">
+<span class="material-symbols-outlined text-[1.125rem]">grid_view</span>
+</button>
+<button class="p-1.5 rounded text-on-surface-variant hover:text-on-surface transition-colors" title="Dense Compact View">
+<span class="material-symbols-outlined text-[1.125rem]">view_headline</span>
+</button>
+</div>
+<div class="h-4 w-px bg-surface-container-highest"></div>
+<!-- Secondary Operational Actions -->
+<button class="flex items-center gap-space-xs px-space-md py-1.5 bg-surface-container hover:bg-surface-container-high text-on-surface rounded font-code-sm text-code-sm transition-colors">
+<span class="material-symbols-outlined text-[1rem] text-tertiary">ios_share</span>
+<span>Export</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-1.5 bg-surface-container hover:bg-surface-container-high text-on-surface rounded font-code-sm text-code-sm transition-colors">
+<span class="material-symbols-outlined text-[1rem] text-secondary">label</span>
+<span>Bulk Tags</span>
+</button>
+<!-- Primary Call to Action -->
+<button class="flex items-center gap-space-xs px-space-md py-1.5 bg-primary text-on-primary font-headline-sm text-body-sm font-semibold rounded shadow-md hover:bg-primary-fixed-dim transition-all">
+<span class="material-symbols-outlined text-[1rem]">add_circle</span>
+<span>New Collection</span>
+</button>
+</div>
+</div>
+<!-- Quick Index Telemetry Subheader -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between px-space-xs text-on-surface-variant text-code-sm font-code-sm">
+<div class="flex items-center gap-space-sm">
+<span class="flex items-center gap-1 text-on-surface">
+<span class="material-symbols-outlined text-[1rem] text-primary" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span>Showing <strong class="text-on-surface font-semibold">1,428</strong> starred repositories</span>
+</span>
+<span class="text-surface-container-highest">•</span>
+<span class="text-tertiary">42 organized into custom vaults</span>
+<span class="text-surface-container-highest">•</span>
+<span class="text-secondary">984 uncategorized</span>
+</div>
+<div class="flex items-center gap-space-md mt-1 sm:mt-0">
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            Sync speed: 12ms
+          </span>
+<span class="flex items-center gap-1 text-on-surface-variant">
+            Last indexed: 4 mins ago
+          </span>
+</div>
+</div>
+</div>
+<!-- Section 2: Pinned Star Spotlight / Telemetry Strip -->
+<div class="mb-space-xl">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">
+<span class="material-symbols-outlined text-[1rem] text-primary" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span>Pinned Vanguard • High Velocity Favorites</span>
+</div>
+<button class="text-code-sm font-code-sm text-secondary hover:text-primary flex items-center gap-0.5">
+<span>Edit Pinned Repos</span>
+<span class="material-symbols-outlined text-[0.875rem]">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-gutter">
+<!-- Spotlight 1 -->
+<div class="relative group bg-surface-container-low hover:bg-surface-container p-space-md rounded-xl transition-all duration-300 shadow-sm hover:shadow-lg flex flex-col justify-between">
+<div class="flex items-start justify-between mb-space-xs">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="p-1.5 rounded bg-surface-container-high text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[1.125rem]" style="font-variation-settings: 'FILL' 1;">star</span>
+</span>
+<div class="truncate">
+<p class="font-code-sm text-code-sm text-on-surface-variant truncate">tailwindlabs</p>
+<h4 class="font-headline-sm text-headline-sm text-secondary font-bold truncate group-hover:text-primary transition-colors">tailwindcss</h4>
+</div>
+</div>
+<span class="flex items-center gap-0.5 px-space-xs py-0.5 rounded bg-surface-container-highest font-code-sm text-code-sm text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[0.875rem]" style="font-variation-settings: 'FILL' 1;">star</span>
+              81.4k
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant/80 line-clamp-2 mb-space-sm">
+            A utility-first CSS framework for rapid UI development and dynamic composition.
+          </p>
+<div class="flex items-center justify-between pt-space-xs text-code-sm font-code-sm text-on-surface-variant">
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-[#3178c6]"></span> TypeScript</span>
+<span class="text-tertiary">v4.0 Oxide release</span>
+</div>
+</div>
+<!-- Spotlight 2 -->
+<div class="relative group bg-surface-container-low hover:bg-surface-container p-space-md rounded-xl transition-all duration-300 shadow-sm hover:shadow-lg flex flex-col justify-between">
+<div class="flex items-start justify-between mb-space-xs">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="p-1.5 rounded bg-surface-container-high text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[1.125rem]" style="font-variation-settings: 'FILL' 1;">star</span>
+</span>
+<div class="truncate">
+<p class="font-code-sm text-code-sm text-on-surface-variant truncate">astral-sh</p>
+<h4 class="font-headline-sm text-headline-sm text-secondary font-bold truncate group-hover:text-primary transition-colors">uv</h4>
+</div>
+</div>
+<span class="flex items-center gap-0.5 px-space-xs py-0.5 rounded bg-surface-container-highest font-code-sm text-code-sm text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[0.875rem]" style="font-variation-settings: 'FILL' 1;">star</span>
+              32.4k
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant/80 line-clamp-2 mb-space-sm">
+            An extremely fast Python package and project manager, written entirely in Rust.
+          </p>
+<div class="flex items-center justify-between pt-space-xs text-code-sm font-code-sm text-on-surface-variant">
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-[#dea584]"></span> Rust</span>
+<span class="text-primary font-medium">⚡ 100x pip speed</span>
+</div>
+</div>
+<!-- Spotlight 3 -->
+<div class="relative group bg-surface-container-low hover:bg-surface-container p-space-md rounded-xl transition-all duration-300 shadow-sm hover:shadow-lg flex flex-col justify-between">
+<div class="flex items-start justify-between mb-space-xs">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="p-1.5 rounded bg-surface-container-high text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[1.125rem]" style="font-variation-settings: 'FILL' 1;">star</span>
+</span>
+<div class="truncate">
+<p class="font-code-sm text-code-sm text-on-surface-variant truncate">shadcn-ui</p>
+<h4 class="font-headline-sm text-headline-sm text-secondary font-bold truncate group-hover:text-primary transition-colors">ui</h4>
+</div>
+</div>
+<span class="flex items-center gap-0.5 px-space-xs py-0.5 rounded bg-surface-container-highest font-code-sm text-code-sm text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[0.875rem]" style="font-variation-settings: 'FILL' 1;">star</span>
+              68.2k
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant/80 line-clamp-2 mb-space-sm">
+            Accessible and customizable components designed for direct copy-paste deployment.
+          </p>
+<div class="flex items-center justify-between pt-space-xs text-code-sm font-code-sm text-on-surface-variant">
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-[#3178c6]"></span> TypeScript</span>
+<span class="text-secondary">Next.js 15 Ready</span>
+</div>
+</div>
+<!-- Spotlight 4 -->
+<div class="relative group bg-surface-container-low hover:bg-surface-container p-space-md rounded-xl transition-all duration-300 shadow-sm hover:shadow-lg flex flex-col justify-between">
+<div class="flex items-start justify-between mb-space-xs">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="p-1.5 rounded bg-surface-container-high text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[1.125rem]" style="font-variation-settings: 'FILL' 1;">star</span>
+</span>
+<div class="truncate">
+<p class="font-code-sm text-code-sm text-on-surface-variant truncate">ollama</p>
+<h4 class="font-headline-sm text-headline-sm text-secondary font-bold truncate group-hover:text-primary transition-colors">ollama</h4>
+</div>
+</div>
+<span class="flex items-center gap-0.5 px-space-xs py-0.5 rounded bg-surface-container-highest font-code-sm text-code-sm text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[0.875rem]" style="font-variation-settings: 'FILL' 1;">star</span>
+              98.6k
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant/80 line-clamp-2 mb-space-sm">
+            Get up and running with Llama 3.3, Mistral, and other large language models locally.
+          </p>
+<div class="flex items-center justify-between pt-space-xs text-code-sm font-code-sm text-on-surface-variant">
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-[#00ADD8]"></span> Go</span>
+<span class="text-tertiary">Local Inference</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 3: Rich Starred Repositories Matrix (8 Deep-Data Cards) -->
+<div class="mb-space-xl">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Main Starred Armory</h2>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-secondary font-code-sm text-code-sm">Page 1 of 179</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-code-sm text-code-sm">
+<span class="material-symbols-outlined text-[1rem]">tune</span>
+<span>Filtered by default active cluster</span>
+</div>
+</div>
+<!-- Bento-style Dynamic Card Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter-lg">
+<!-- CARD 1: astral-sh/uv (High density tactical card) -->
+<article class="group relative flex flex-col justify-between bg-surface-container-low hover:bg-surface-container p-space-lg rounded-xl transition-all duration-200 shadow-md">
+<div>
+<!-- Header Section -->
+<div class="flex items-start justify-between gap-space-md mb-space-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="font-body-md text-body-md text-on-surface-variant">astral-sh</span>
+<span class="text-outline-variant font-code-sm">/</span>
+<h3 class="font-headline-sm text-headline-sm text-secondary font-bold group-hover:text-primary transition-colors truncate">
+                  uv
+                </h3>
+<span class="ml-space-xs px-1.5 py-0.5 rounded bg-surface-container-high text-[0.625rem] font-code-sm text-on-surface-variant uppercase tracking-wider">Public</span>
+</div>
+<!-- Action Suite -->
+<div class="flex items-center gap-space-xs flex-shrink-0">
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-primary transition-colors" title="Toggle Star">
+<span class="material-symbols-outlined text-[1.125rem]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors" onclick="document.getElementById('readmeModal').classList.remove('hidden')" title="Quick README Preview">
+<span class="material-symbols-outlined text-[1.125rem]">visibility</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors" title="Add to Vault List">
+<span class="material-symbols-outlined text-[1.125rem]">bookmark_add</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors" title="Copy Clone command">
+<span class="material-symbols-outlined text-[1.125rem]">content_copy</span>
+</button>
+</div>
+</div>
+<!-- Description -->
+<p class="font-body-md text-body-md text-on-surface line-clamp-2 mb-space-md">
+              Extremely fast Python package installer and resolver, written in Rust. Designed as a drop-in replacement for pip and virtualenv.
+            </p>
+<!-- Personal Curated StarVault Annotation Note -->
+<div class="flex items-start gap-space-xs p-space-sm mb-space-md rounded bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[1rem] flex-shrink-0 mt-0.5">sticky_note_2</span>
+<div class="font-code-sm text-code-sm text-on-surface-variant">
+<span class="text-primary font-semibold">Vault Note:</span> Replaced poetry and pip in all local workflows; saves 45s in CI cold builds.
+              </div>
+</div>
+<!-- Custom StarVault Tags & Collections -->
+<div class="flex flex-wrap items-center gap-space-xs mb-space-md">
+<span class="flex items-center gap-1 px-space-xs py-0.5 rounded bg-secondary-container/20 text-secondary text-code-sm font-code-sm">
+<span class="material-symbols-outlined text-[0.875rem]">folder_special</span>
+                Rust CLI
+              </span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-tertiary text-code-sm font-code-sm">#python</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-tertiary text-code-sm font-code-sm">#cli</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-primary text-code-sm font-code-sm">#blazing-fast</span>
+</div>
+</div>
+<!-- Bottom Telemetry Footer -->
+<div class="flex flex-wrap items-center justify-between gap-space-xs pt-space-sm text-on-surface-variant font-code-sm text-code-sm border-t-0">
+<div class="flex items-center gap-space-md">
+<span class="flex items-center gap-1 text-primary font-semibold">
+<span class="material-symbols-outlined text-[1rem]" style="font-variation-settings: 'FILL' 1;">star</span>
+                32.4k
+              </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[1rem]">call_split</span>
+                1.1k
+              </span>
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-[#dea584]"></span>
+                Rust
+              </span>
+<span class="text-on-surface-variant/70">MIT / Apache-2.0</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant/80">
+<span class="material-symbols-outlined text-[0.875rem]">schedule</span>
+<span>2 hours ago</span>
+</div>
+</div>
+</article>
+<!-- CARD 2: shadcn-ui/ui -->
+<article class="group relative flex flex-col justify-between bg-surface-container-low hover:bg-surface-container p-space-lg rounded-xl transition-all duration-200 shadow-md">
+<div>
+<div class="flex items-start justify-between gap-space-md mb-space-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="font-body-md text-body-md text-on-surface-variant">shadcn-ui</span>
+<span class="text-outline-variant font-code-sm">/</span>
+<h3 class="font-headline-sm text-headline-sm text-secondary font-bold group-hover:text-primary transition-colors truncate">
+                  ui
+                </h3>
+<span class="ml-space-xs px-1.5 py-0.5 rounded bg-surface-container-high text-[0.625rem] font-code-sm text-on-surface-variant uppercase tracking-wider">Public</span>
+</div>
+<div class="flex items-center gap-space-xs flex-shrink-0">
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-primary transition-colors">
+<span class="material-symbols-outlined text-[1.125rem]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors" onclick="document.getElementById('readmeModal').classList.remove('hidden')">
+<span class="material-symbols-outlined text-[1.125rem]">visibility</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[1.125rem]">bookmark_add</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[1.125rem]">content_copy</span>
+</button>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface line-clamp-2 mb-space-md">
+              Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.
+            </p>
+<div class="flex items-start gap-space-xs p-space-sm mb-space-md rounded bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[1rem] flex-shrink-0 mt-0.5">bookmark</span>
+<div class="font-code-sm text-code-sm text-on-surface-variant">
+<span class="text-secondary font-semibold">Vault Note:</span> Foundation for the entire dashboard UI ecosystem. Check radix updates.
+              </div>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs mb-space-md">
+<span class="flex items-center gap-1 px-space-xs py-0.5 rounded bg-primary-container/20 text-primary text-code-sm font-code-sm">
+<span class="material-symbols-outlined text-[0.875rem]">palette</span>
+                Frontend Gems
+              </span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-tertiary text-code-sm font-code-sm">#react</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-tertiary text-code-sm font-code-sm">#tailwind</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-secondary text-code-sm font-code-sm">#components</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-xs pt-space-sm text-on-surface-variant font-code-sm text-code-sm">
+<div class="flex items-center gap-space-md">
+<span class="flex items-center gap-1 text-primary font-semibold">
+<span class="material-symbols-outlined text-[1rem]" style="font-variation-settings: 'FILL' 1;">star</span>
+                68.2k
+              </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[1rem]">call_split</span>
+                5.9k
+              </span>
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-[#3178c6]"></span>
+                TypeScript
+              </span>
+<span class="text-on-surface-variant/70">MIT</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant/80">
+<span class="material-symbols-outlined text-[0.875rem]">schedule</span>
+<span>5 hours ago</span>
+</div>
+</div>
+</article>
+<!-- CARD 3: ollama/ollama -->
+<article class="group relative flex flex-col justify-between bg-surface-container-low hover:bg-surface-container p-space-lg rounded-xl transition-all duration-200 shadow-md">
+<div>
+<div class="flex items-start justify-between gap-space-md mb-space-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="font-body-md text-body-md text-on-surface-variant">ollama</span>
+<span class="text-outline-variant font-code-sm">/</span>
+<h3 class="font-headline-sm text-headline-sm text-secondary font-bold group-hover:text-primary transition-colors truncate">
+                  ollama
+                </h3>
+<span class="ml-space-xs px-1.5 py-0.5 rounded bg-surface-container-high text-[0.625rem] font-code-sm text-on-surface-variant uppercase tracking-wider">Public</span>
+</div>
+<div class="flex items-center gap-space-xs flex-shrink-0">
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-primary transition-colors">
+<span class="material-symbols-outlined text-[1.125rem]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors" onclick="document.getElementById('readmeModal').classList.remove('hidden')">
+<span class="material-symbols-outlined text-[1.125rem]">visibility</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[1.125rem]">bookmark_add</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[1.125rem]">content_copy</span>
+</button>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface line-clamp-2 mb-space-md">
+              Get up and running with Llama 3.3, Mistral, Gemma 2, and other large language models locally with simple CLI tooling.
+            </p>
+<div class="flex items-start gap-space-xs p-space-sm mb-space-md rounded bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-[1rem] flex-shrink-0 mt-0.5">neurology</span>
+<div class="font-code-sm text-code-sm text-on-surface-variant">
+<span class="text-tertiary font-semibold">Vault Note:</span> Run local embeddings pipeline with mistral-small:8b.
+              </div>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs mb-space-md">
+<span class="flex items-center gap-1 px-space-xs py-0.5 rounded bg-secondary-container/20 text-secondary text-code-sm font-code-sm">
+<span class="material-symbols-outlined text-[0.875rem]">neurology</span>
+                AI &amp; ML
+              </span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-tertiary text-code-sm font-code-sm">#llm</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-tertiary text-code-sm font-code-sm">#ai</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-secondary text-code-sm font-code-sm">#local-first</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-xs pt-space-sm text-on-surface-variant font-code-sm text-code-sm">
+<div class="flex items-center gap-space-md">
+<span class="flex items-center gap-1 text-primary font-semibold">
+<span class="material-symbols-outlined text-[1rem]" style="font-variation-settings: 'FILL' 1;">star</span>
+                98.6k
+              </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[1rem]">call_split</span>
+                7.8k
+              </span>
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-[#00ADD8]"></span>
+                Go
+              </span>
+<span class="text-on-surface-variant/70">MIT</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant/80">
+<span class="material-symbols-outlined text-[0.875rem]">schedule</span>
+<span>Yesterday</span>
+</div>
+</div>
+</article>
+<!-- CARD 4: facebook/react -->
+<article class="group relative flex flex-col justify-between bg-surface-container-low hover:bg-surface-container p-space-lg rounded-xl transition-all duration-200 shadow-md">
+<div>
+<div class="flex items-start justify-between gap-space-md mb-space-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="font-body-md text-body-md text-on-surface-variant">facebook</span>
+<span class="text-outline-variant font-code-sm">/</span>
+<h3 class="font-headline-sm text-headline-sm text-secondary font-bold group-hover:text-primary transition-colors truncate">
+                  react
+                </h3>
+<span class="ml-space-xs px-1.5 py-0.5 rounded bg-surface-container-high text-[0.625rem] font-code-sm text-on-surface-variant uppercase tracking-wider">Public</span>
+</div>
+<div class="flex items-center gap-space-xs flex-shrink-0">
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-primary transition-colors">
+<span class="material-symbols-outlined text-[1.125rem]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors" onclick="document.getElementById('readmeModal').classList.remove('hidden')">
+<span class="material-symbols-outlined text-[1.125rem]">visibility</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[1.125rem]">bookmark_add</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[1.125rem]">content_copy</span>
+</button>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface line-clamp-2 mb-space-md">
+              The library for web and native user interfaces. Build user interfaces out of individual pieces called components.
+            </p>
+<div class="flex items-start gap-space-xs p-space-sm mb-space-md rounded bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[1rem] flex-shrink-0 mt-0.5">inventory</span>
+<div class="font-code-sm text-code-sm text-on-surface-variant">
+<span class="text-primary font-semibold">Vault Note:</span> Tracking React 19 compiler changes &amp; actions architecture.
+              </div>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs mb-space-md">
+<span class="flex items-center gap-1 px-space-xs py-0.5 rounded bg-primary-container/20 text-primary text-code-sm font-code-sm">
+<span class="material-symbols-outlined text-[0.875rem]">palette</span>
+                Frontend Gems
+              </span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-tertiary text-code-sm font-code-sm">#ui</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-tertiary text-code-sm font-code-sm">#frontend</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-secondary text-code-sm font-code-sm">#v19</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-xs pt-space-sm text-on-surface-variant font-code-sm text-code-sm">
+<div class="flex items-center gap-space-md">
+<span class="flex items-center gap-1 text-primary font-semibold">
+<span class="material-symbols-outlined text-[1rem]" style="font-variation-settings: 'FILL' 1;">star</span>
+                228k
+              </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[1rem]">call_split</span>
+                45.9k
+              </span>
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-[#f1e05a]"></span>
+                JavaScript
+              </span>
+<span class="text-on-surface-variant/70">MIT</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant/80">
+<span class="material-symbols-outlined text-[0.875rem]">schedule</span>
+<span>3 hours ago</span>
+</div>
+</div>
+</article>
+<!-- CARD 5: tursodatabase/limbo -->
+<article class="group relative flex flex-col justify-between bg-surface-container-low hover:bg-surface-container p-space-lg rounded-xl transition-all duration-200 shadow-md">
+<div>
+<div class="flex items-start justify-between gap-space-md mb-space-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="font-body-md text-body-md text-on-surface-variant">tursodatabase</span>
+<span class="text-outline-variant font-code-sm">/</span>
+<h3 class="font-headline-sm text-headline-sm text-secondary font-bold group-hover:text-primary transition-colors truncate">
+                  limbo
+                </h3>
+<span class="ml-space-xs px-1.5 py-0.5 rounded bg-surface-container-high text-[0.625rem] font-code-sm text-on-surface-variant uppercase tracking-wider">Public</span>
+</div>
+<div class="flex items-center gap-space-xs flex-shrink-0">
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-primary transition-colors">
+<span class="material-symbols-outlined text-[1.125rem]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors" onclick="document.getElementById('readmeModal').classList.remove('hidden')">
+<span class="material-symbols-outlined text-[1.125rem]">visibility</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[1.125rem]">bookmark_add</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[1.125rem]">content_copy</span>
+</button>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface line-clamp-2 mb-space-md">
+              Limbo is an interactive SQL shell and SQLite-compatible database engine completely rewritten in pure Rust with asynchronous IO.
+            </p>
+<div class="flex items-start gap-space-xs p-space-sm mb-space-md rounded bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[1rem] flex-shrink-0 mt-0.5">storage</span>
+<div class="font-code-sm text-code-sm text-on-surface-variant">
+<span class="text-secondary font-semibold">Vault Note:</span> Exploring for embedded edge database scenarios.
+              </div>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs mb-space-md">
+<span class="flex items-center gap-1 px-space-xs py-0.5 rounded bg-secondary-container/20 text-secondary text-code-sm font-code-sm">
+<span class="material-symbols-outlined text-[0.875rem]">folder_special</span>
+                Rust CLI
+              </span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-tertiary text-code-sm font-code-sm">#database</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-tertiary text-code-sm font-code-sm">#sqlite</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-secondary text-code-sm font-code-sm">#rust</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-xs pt-space-sm text-on-surface-variant font-code-sm text-code-sm">
+<div class="flex items-center gap-space-md">
+<span class="flex items-center gap-1 text-primary font-semibold">
+<span class="material-symbols-outlined text-[1rem]" style="font-variation-settings: 'FILL' 1;">star</span>
+                7.9k
+              </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[1rem]">call_split</span>
+                320
+              </span>
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-[#dea584]"></span>
+                Rust
+              </span>
+<span class="text-on-surface-variant/70">MIT</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant/80">
+<span class="material-symbols-outlined text-[0.875rem]">schedule</span>
+<span>1 day ago</span>
+</div>
+</div>
+</article>
+<!-- CARD 6: vllm-project/vllm -->
+<article class="group relative flex flex-col justify-between bg-surface-container-low hover:bg-surface-container p-space-lg rounded-xl transition-all duration-200 shadow-md">
+<div>
+<div class="flex items-start justify-between gap-space-md mb-space-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="font-body-md text-body-md text-on-surface-variant">vllm-project</span>
+<span class="text-outline-variant font-code-sm">/</span>
+<h3 class="font-headline-sm text-headline-sm text-secondary font-bold group-hover:text-primary transition-colors truncate">
+                  vllm
+                </h3>
+<span class="ml-space-xs px-1.5 py-0.5 rounded bg-surface-container-high text-[0.625rem] font-code-sm text-on-surface-variant uppercase tracking-wider">Public</span>
+</div>
+<div class="flex items-center gap-space-xs flex-shrink-0">
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-primary transition-colors">
+<span class="material-symbols-outlined text-[1.125rem]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors" onclick="document.getElementById('readmeModal').classList.remove('hidden')">
+<span class="material-symbols-outlined text-[1.125rem]">visibility</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[1.125rem]">bookmark_add</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[1.125rem]">content_copy</span>
+</button>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface line-clamp-2 mb-space-md">
+              A high-throughput and memory-efficient LLM serving and inference engine utilizing PagedAttention technology.
+            </p>
+<div class="flex items-start gap-space-xs p-space-sm mb-space-md rounded bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[1rem] flex-shrink-0 mt-0.5">developer_board</span>
+<div class="font-code-sm text-code-sm text-on-surface-variant">
+<span class="text-primary font-semibold">Vault Note:</span> Standardized backend across our H100 serving cluster.
+              </div>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs mb-space-md">
+<span class="flex items-center gap-1 px-space-xs py-0.5 rounded bg-secondary-container/20 text-secondary text-code-sm font-code-sm">
+<span class="material-symbols-outlined text-[0.875rem]">neurology</span>
+                AI &amp; ML
+              </span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-tertiary text-code-sm font-code-sm">#deep-learning</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-tertiary text-code-sm font-code-sm">#inference</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-secondary text-code-sm font-code-sm">#paged-attention</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-xs pt-space-sm text-on-surface-variant font-code-sm text-code-sm">
+<div class="flex items-center gap-space-md">
+<span class="flex items-center gap-1 text-primary font-semibold">
+<span class="material-symbols-outlined text-[1rem]" style="font-variation-settings: 'FILL' 1;">star</span>
+                31.8k
+              </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[1rem]">call_split</span>
+                4.5k
+              </span>
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-[#3572A5]"></span>
+                Python
+              </span>
+<span class="text-on-surface-variant/70">Apache-2.0</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant/80">
+<span class="material-symbols-outlined text-[0.875rem]">schedule</span>
+<span>4 hours ago</span>
+</div>
+</div>
+</article>
+<!-- CARD 7: biomejs/biome -->
+<article class="group relative flex flex-col justify-between bg-surface-container-low hover:bg-surface-container p-space-lg rounded-xl transition-all duration-200 shadow-md">
+<div>
+<div class="flex items-start justify-between gap-space-md mb-space-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="font-body-md text-body-md text-on-surface-variant">biomejs</span>
+<span class="text-outline-variant font-code-sm">/</span>
+<h3 class="font-headline-sm text-headline-sm text-secondary font-bold group-hover:text-primary transition-colors truncate">
+                  biome
+                </h3>
+<span class="ml-space-xs px-1.5 py-0.5 rounded bg-surface-container-high text-[0.625rem] font-code-sm text-on-surface-variant uppercase tracking-wider">Public</span>
+</div>
+<div class="flex items-center gap-space-xs flex-shrink-0">
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-primary transition-colors">
+<span class="material-symbols-outlined text-[1.125rem]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors" onclick="document.getElementById('readmeModal').classList.remove('hidden')">
+<span class="material-symbols-outlined text-[1.125rem]">visibility</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[1.125rem]">bookmark_add</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[1.125rem]">content_copy</span>
+</button>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface line-clamp-2 mb-space-md">
+              A toolchain for the web that formats, lints, and more in a fraction of a second. The official successor to Rome.
+            </p>
+<div class="flex items-start gap-space-xs p-space-sm mb-space-md rounded bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[1rem] flex-shrink-0 mt-0.5">bolt</span>
+<div class="font-code-sm text-code-sm text-on-surface-variant">
+<span class="text-secondary font-semibold">Vault Note:</span> Formatting speeds up monorepo checks by ~90%.
+              </div>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs mb-space-md">
+<span class="flex items-center gap-1 px-space-xs py-0.5 rounded bg-primary-container/20 text-primary text-code-sm font-code-sm">
+<span class="material-symbols-outlined text-[0.875rem]">build</span>
+                Dev Tools
+              </span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-tertiary text-code-sm font-code-sm">#linter</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-tertiary text-code-sm font-code-sm">#formatter</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-secondary text-code-sm font-code-sm">#rust</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-xs pt-space-sm text-on-surface-variant font-code-sm text-code-sm">
+<div class="flex items-center gap-space-md">
+<span class="flex items-center gap-1 text-primary font-semibold">
+<span class="material-symbols-outlined text-[1rem]" style="font-variation-settings: 'FILL' 1;">star</span>
+                16.4k
+              </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[1rem]">call_split</span>
+                580
+              </span>
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-[#dea584]"></span>
+                Rust
+              </span>
+<span class="text-on-surface-variant/70">MIT / Apache-2.0</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant/80">
+<span class="material-symbols-outlined text-[0.875rem]">schedule</span>
+<span>18 hours ago</span>
+</div>
+</div>
+</article>
+<!-- CARD 8: supabase/supabase -->
+<article class="group relative flex flex-col justify-between bg-surface-container-low hover:bg-surface-container p-space-lg rounded-xl transition-all duration-200 shadow-md">
+<div>
+<div class="flex items-start justify-between gap-space-md mb-space-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="font-body-md text-body-md text-on-surface-variant">supabase</span>
+<span class="text-outline-variant font-code-sm">/</span>
+<h3 class="font-headline-sm text-headline-sm text-secondary font-bold group-hover:text-primary transition-colors truncate">
+                  supabase
+                </h3>
+<span class="ml-space-xs px-1.5 py-0.5 rounded bg-surface-container-high text-[0.625rem] font-code-sm text-on-surface-variant uppercase tracking-wider">Public</span>
+</div>
+<div class="flex items-center gap-space-xs flex-shrink-0">
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-primary transition-colors">
+<span class="material-symbols-outlined text-[1.125rem]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors" onclick="document.getElementById('readmeModal').classList.remove('hidden')">
+<span class="material-symbols-outlined text-[1.125rem]">visibility</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[1.125rem]">bookmark_add</span>
+</button>
+<button class="p-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[1.125rem]">content_copy</span>
+</button>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface line-clamp-2 mb-space-md">
+              The open source Firebase alternative. Build production-grade backends with Postgres Database, Authentication, Instant APIs, and Realtime.
+            </p>
+<div class="flex items-start gap-space-xs p-space-sm mb-space-md rounded bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-[1rem] flex-shrink-0 mt-0.5">cloud</span>
+<div class="font-code-sm text-code-sm text-on-surface-variant">
+<span class="text-tertiary font-semibold">Vault Note:</span> Used for primary app auth + real-time presence channels.
+              </div>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs mb-space-md">
+<span class="flex items-center gap-1 px-space-xs py-0.5 rounded bg-secondary-container/20 text-secondary text-code-sm font-code-sm">
+<span class="material-symbols-outlined text-[0.875rem]">cloud</span>
+                Cloud Native
+              </span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-tertiary text-code-sm font-code-sm">#database</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-tertiary text-code-sm font-code-sm">#postgres</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-secondary text-code-sm font-code-sm">#auth</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-xs pt-space-sm text-on-surface-variant font-code-sm text-code-sm">
+<div class="flex items-center gap-space-md">
+<span class="flex items-center gap-1 text-primary font-semibold">
+<span class="material-symbols-outlined text-[1rem]" style="font-variation-settings: 'FILL' 1;">star</span>
+                74.1k
+              </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[1rem]">call_split</span>
+                6.2k
+              </span>
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-[#3178c6]"></span>
+                TypeScript
+              </span>
+<span class="text-on-surface-variant/70">Apache-2.0</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant/80">
+<span class="material-symbols-outlined text-[0.875rem]">schedule</span>
+<span>6 hours ago</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+<!-- Section 4: Operational Pagination Bar & Sync Telemetry -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md p-space-md bg-surface-container-low rounded-xl shadow-md">
+<!-- Showing Range Details -->
+<div class="flex items-center gap-space-sm text-on-surface-variant font-code-sm text-code-sm">
+<span class="text-on-surface font-semibold">1 – 8</span>
+<span>of</span>
+<span class="text-primary font-semibold">1,428</span>
+<span>repositories cataloged</span>
+</div>
+<!-- Centered Numeric Pagination Suite -->
+<div class="flex items-center gap-1">
+<button class="flex items-center justify-center w-8 h-8 rounded bg-surface-container text-on-surface-variant/60 hover:text-on-surface hover:bg-surface-container-high transition-colors" disabled="">
+<span class="material-symbols-outlined text-[1.125rem]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded bg-primary text-on-primary font-code-sm text-code-sm font-bold shadow-sm">
+          1
+        </button>
+<button class="w-8 h-8 rounded bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-code-sm text-code-sm transition-colors">
+          2
+        </button>
+<button class="w-8 h-8 rounded bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-code-sm text-code-sm transition-colors">
+          3
+        </button>
+<span class="px-1 text-on-surface-variant/50 font-code-sm text-code-sm">...</span>
+<button class="w-8 h-8 rounded bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-code-sm text-code-sm transition-colors">
+          179
+        </button>
+<button class="flex items-center justify-center w-8 h-8 rounded bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[1.125rem]">chevron_right</span>
+</button>
+</div>
+<!-- Sync Status with Live Green Telemetry -->
+<div class="flex items-center gap-space-sm font-code-sm text-code-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5 px-space-sm py-1 bg-surface-container rounded-full">
+<span class="material-symbols-outlined text-[0.875rem] text-primary">verified</span>
+<span class="text-on-surface">GitHub Sync Active</span>
+<span class="w-2 h-2 rounded-full bg-primary animate-ping ml-0.5"></span>
+</div>
+</div>
+</div>
+</div>
+<!-- README Modal Quick Preview (Interactive Overlay) -->
+<div class="hidden fixed inset-0 z-50 bg-surface-dim/80 backdrop-blur-sm flex items-center justify-center p-space-md" id="readmeModal">
+<div class="bg-surface-container-low max-w-2xl w-full rounded-xl shadow-2xl p-space-lg flex flex-col max-h-[870px]">
+<div class="flex items-center justify-between pb-space-md border-b-0 mb-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[1.25rem]">menu_book</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">astral-sh/uv • README.md</h4>
+</div>
+<button class="p-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface" onclick="document.getElementById('readmeModal').classList.add('hidden')">
+<span class="material-symbols-outlined text-[1.125rem]">close</span>
+</button>
+</div>
+<div class="overflow-y-auto flex-1 font-body-md text-body-md text-on-surface-variant space-y-3 pr-2">
+<p class="font-bold text-on-surface">An extremely fast Python package and project manager, written in Rust.</p>
+<p>Highlights:</p>
+<ul class="list-disc pl-5 space-y-1 font-code-sm text-code-sm">
+<li>🚀 10-100x faster than pip and pip-tools (pip compile and pip sync).</li>
+<li>📦 Drop-in support for pyproject.toml, requirements.txt, and setup.py.</li>
+<li>⚡ Disk-space efficient, with a global cache for dependency deduplication.</li>
+<li>🛠️ First-class support for virtual environments and universal cross-platform resolution.</li>
+</ul>
+<div class="p-space-md bg-surface-container-lowest rounded font-code-md text-code-md text-primary">
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+        </div>
+</div>
+<div class="flex justify-end gap-space-sm pt-space-md">
+<button class="px-space-md py-1.5 bg-surface-container hover:bg-surface-container-high rounded font-code-sm text-code-sm text-on-surface" onclick="document.getElementById('readmeModal').classList.add('hidden')">Close</button>
+<a class="px-space-md py-1.5 bg-primary text-on-primary font-code-sm text-code-sm rounded font-bold" href="https://github.com/astral-sh/uv" target="_blank">Open on GitHub</a>
+</div>
+</div>
+</div>
+<script>
+    // Micro-interaction toggles
+    document.addEventListener('click', function(e) {
+      const dropdown = document.getElementById('langDropdown');
+      const menu = document.getElementById('langMenu');
+      if (dropdown && !dropdown.contains(e.target)) {
+        menu.classList.add('hidden');
+      }
+    });
+  </script>
+</div></main></div></body></html>

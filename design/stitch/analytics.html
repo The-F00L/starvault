@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"outline":"#9b8f7c","primary":"#ffcf64","on-surface-variant":"#d2c5af","inverse-surface":"#dfe2eb","surface":"#10141a","secondary":"#a2c9ff","tertiary-fixed-dim":"#96ccff","inverse-primary":"#795900","on-tertiary":"#003353","surface-container":"#1c2026","tertiary-fixed":"#cee5ff","surface-container-low":"#181c22","on-secondary-fixed":"#001c38","error":"#ffb4ab","on-background":"#dfe2eb","on-tertiary-fixed-variant":"#004a76","on-error":"#690005","primary-fixed-dim":"#f1c04c","on-secondary":"#00315c","tertiary-container":"#79c0ff","inverse-on-surface":"#2d3137","on-primary-container":"#5f4600","on-secondary-container":"#f0f4ff","primary-container":"#e3b341","surface-container-high":"#262a31","outline-variant":"#4e4635","surface-tint":"#f1c04c","on-primary-fixed":"#261a00","surface-container-lowest":"#0a0e14","secondary-container":"#0071c7","on-tertiary-container":"#004e7b","surface-dim":"#10141a","primary-fixed":"#ffdf9e","secondary-fixed-dim":"#a2c9ff","on-secondary-fixed-variant":"#004882","tertiary":"#b5d9ff","surface-container-highest":"#31353c","secondary-fixed":"#d3e4ff","on-surface":"#dfe2eb","on-primary":"#3f2e00","error-container":"#93000a","surface-variant":"#31353c","surface-bright":"#353940","on-tertiary-fixed":"#001d32","on-error-container":"#ffdad6","on-primary-fixed-variant":"#5b4300","background":"#10141a"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"gutter":"1rem","space-lg":"1.25rem","margin":"1rem","margin-lg":"2rem","gutter-lg":"1.5rem","space-md":"0.75rem","space-xs":"0.25rem","space-sm":"0.5rem","margin-md":"1.5rem","space-xl":"2rem"},fontFamily:{"headline-xl":["Inter"],"headline-lg":["Inter"],"code-sm":["JetBrains Mono"],"body-sm":["Inter"],"body-md":["Inter"],"label-caps":["JetBrains Mono"],"code-md":["JetBrains Mono"],"body-lg":["Inter"],"headline-xl-mobile":["Inter"],"headline-sm":["Inter"]},fontSize:{"headline-xl":["2.25rem",{"lineHeight":"2.75rem","letterSpacing":"-0.025em","fontWeight":"700"}],"headline-lg":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.02em","fontWeight":"600"}],"code-sm":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0em","fontWeight":"500"}],"body-sm":["0.75rem",{"lineHeight":"1.125rem","fontWeight":"400"}],"body-md":["0.875rem",{"lineHeight":"1.375rem","fontWeight":"400"}],"label-caps":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.06em","fontWeight":"600"}],"code-md":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"-0.01em","fontWeight":"500"}],"body-lg":["1rem",{"lineHeight":"1.5rem","fontWeight":"400"}],"headline-xl-mobile":["1.75rem",{"lineHeight":"2.25rem","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-sm":["1.125rem",{"lineHeight":"1.5rem","letterSpacing":"-0.015em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface text-on-surface font-body-md text-body-md"><header class="fixed top-0 left-0 right-0 h-16 bg-surface-container-low/95 backdrop-blur-md z-40 border-b border-surface-container-highest flex items-center justify-between px-margin-lg"><div class="flex items-center gap-space-md w-72"><img alt="StarVault Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WzIJ14QURS6PcDdty3Nr5QeHpIEGfA6BAkbyJ8HEYQawccRmErALpDdQhdVQxYWk4e1LIkJXqGc2O_TBRp4DaMSFPSzgpjfURodXnoHWrWPDQ81wCCmPpIw5or5QCV7EQrbyvuIVCBIGGOg_S_fnTtqx_1xItRgkDnhrdY6Ayl3-9rRVP4NCp_cdz69BSE4fhzMJODMs0086EggC_2yQWYbOWkj3Qc2C30NZyPG57acYrw2Ye6T6dJwJIi"/><span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">StarVault</span></div><div class="flex-1 max-w-xl mx-auto px-gutter"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-md text-on-surface-variant pointer-events-none text-[1.125rem]">search</span><input class="w-full h-9 pl-10 pr-16 bg-surface-container-lowest border border-surface-container-highest rounded text-on-surface placeholder:text-on-surface-variant/60 font-body-md text-body-md focus:outline-none focus:border-secondary transition-colors" placeholder="Search stars, lists, topics, readmes..." type="text"/><div class="absolute right-space-sm flex items-center gap-space-xs"><kbd class="px-1.5 py-0.5 bg-surface-container border border-surface-container-highest rounded font-code-sm text-code-sm text-on-surface-variant">⌘</kbd><kbd class="px-1.5 py-0.5 bg-surface-container border border-surface-container-highest rounded font-code-sm text-code-sm text-on-surface-variant">K</kbd></div></div></div><div class="flex items-center gap-space-md"><div class="hidden lg:flex items-center gap-space-xs px-space-sm py-1 bg-surface-container border border-surface-container-highest rounded-full"><span class="material-symbols-outlined text-primary text-[1rem]">star</span><span class="font-code-sm text-code-sm text-on-surface">1,428 Stars synced</span></div><button class="flex items-center gap-space-xs px-space-md py-1.5 bg-surface-container border border-surface-container-highest hover:border-primary-container text-on-surface hover:text-primary transition-all rounded"><span class="material-symbols-outlined text-[1rem]">sync</span><span class="font-label-caps text-label-caps uppercase">Sync</span></button><button class="relative p-1.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded transition-colors"><span class="material-symbols-outlined text-[1.25rem]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-primary"></span></button><div class="flex items-center pl-space-xs border-l border-surface-container-highest"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-surface-container-highest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlxzKjNqln9OeMrnvrvhygv1soiPos9ppfUP4OhHbWi7JcUGStObfMq1xtDbG8_9zeKQmh3he0Qlt5UxF5cjX_rIlXsVb4Y_8hJkBC-c5p_gctk-aYzrSmB-OOc1g8psl-qWN_g7o_e5bfCHJ34vkHYpQ-n08slJqC7hnpjQHUPdFUZFj2DaOLb67jeupabT5nKCrtkcC3ymKO-QcJEqHhDIrkn-ccQ5CMhavJE9Wst88JWMBql7Xw4g"/></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-72 bg-surface-container-low border-r border-surface-container-highest z-30 flex flex-col justify-between overflow-y-auto"><div class="p-space-md"><div class="mb-space-lg"><nav class="flex flex-col gap-space-xs" data-active-classes="bg-surface-container-high text-primary font-bold border-l-2 border-primary"><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="all-stars" href="#"><span class="material-symbols-outlined text-[1.125rem]">stars</span><span class="font-body-md text-body-md">All Stars</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="recently-updated" href="#"><span class="material-symbols-outlined text-[1.125rem]">update</span><span class="font-body-md text-body-md">Recently Updated</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-2 rounded transition-all bg-surface-container-high text-primary font-bold border-l-2 border-primary" data-path="analytics" href="#"><span class="material-symbols-outlined text-[1.125rem]">monitoring</span><span class="font-body-md text-body-md">Analytics</span></a></nav></div><div class="mb-space-lg"><div class="flex items-center justify-between px-space-md py-1 mb-space-xs text-on-surface-variant font-label-caps text-label-caps uppercase"><span class="tracking-wider">Collections</span><span class="material-symbols-outlined text-[0.875rem] cursor-pointer hover:text-on-surface">add</span></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-surface-container-high text-primary font-bold border-l-2 border-primary"><a class="flex items-center justify-between px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="collections-ai-and-ml" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1rem]">neurology</span><span class="font-body-sm text-body-sm">AI &amp; ML</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/70">284</span></a><a class="flex items-center justify-between px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="collections-frontend-gems" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1rem]">palette</span><span class="font-body-sm text-body-sm">Frontend Gems</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/70">192</span></a><a class="flex items-center justify-between px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="collections-rust-cli" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1rem]">terminal</span><span class="font-body-sm text-body-sm">Rust CLI</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/70">89</span></a><a class="flex items-center justify-between px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="collections-dev-tools" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1rem]">build</span><span class="font-body-sm text-body-sm">Dev Tools</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/70">310</span></a><a class="flex items-center justify-between px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="collections-cloud-native" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[1rem]">cloud</span><span class="font-body-sm text-body-sm">Cloud Native</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/70">154</span></a></nav></div><div class="mb-space-lg"><div class="px-space-md py-1 mb-space-xs text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider">Languages</div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-surface-container-high text-primary font-bold border-l-2 border-primary"><a class="flex items-center justify-between px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="language-typescript" href="#"><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-[#3178c6]"></span><span class="font-body-sm text-body-sm">TypeScript</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/70">412</span></a><a class="flex items-center justify-between px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="language-rust" href="#"><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-[#dea584]"></span><span class="font-body-sm text-body-sm">Rust</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/70">230</span></a><a class="flex items-center justify-between px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="language-python" href="#"><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-[#3572A5]"></span><span class="font-body-sm text-body-sm">Python</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/70">342</span></a><a class="flex items-center justify-between px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="language-go" href="#"><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-[#00ADD8]"></span><span class="font-body-sm text-body-sm">Go</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/70">165</span></a><a class="flex items-center justify-between px-space-md py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="language-cpp" href="#"><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-[#f34b7d]"></span><span class="font-body-sm text-body-sm">C++</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/70">98</span></a></nav></div><div class="mb-space-lg"><nav class="flex flex-col gap-space-xs" data-active-classes="bg-surface-container-high text-primary font-bold border-l-2 border-primary"><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="topics-and-tags" href="#"><span class="material-symbols-outlined text-[1.125rem]">sell</span><span class="font-body-md text-body-md">Topics / Tags</span></a></nav></div></div><div class="p-space-md border-t border-surface-container-highest"><div class="flex items-center justify-between text-on-surface-variant"><div class="flex items-center gap-space-xs font-code-sm text-code-sm"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span>Engine Ready</span></div><span class="font-code-sm text-code-sm text-on-surface-variant/50">v2.4.0</span></div></div></aside><div class="pl-72"><main class="relative pt-16 min-h-screen bg-surface w-full px-gutter-lg py-margin-md"><div class="flex flex-col w-full">
+<!-- Top Command & Perspective Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md mb-space-xl">
+<div>
+<div class="flex items-center gap-space-xs font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider mb-space-xs">
+<span>Vault Telemetry</span>
+<span>/</span>
+<span class="text-primary font-bold">Stargazing Intelligence</span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-primary animate-pulse ml-space-xs"></span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">Star Analytics &amp; Insights</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+        Algorithmic audit of 1,428 starred repositories. Tracking language velocity, maintenance decay, and architectural affinity.
+      </p>
+</div>
+<!-- Quick Action / Date Filter Cluster -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="flex items-center bg-surface-container-low rounded-xl p-1 shadow-sm">
+<button class="px-space-md py-1.5 rounded font-label-caps text-label-caps uppercase bg-surface-container-high text-primary font-semibold shadow-sm transition-all">All Time</button>
+<button class="px-space-md py-1.5 rounded font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-all">2024</button>
+<button class="px-space-md py-1.5 rounded font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-all">2023</button>
+<button class="px-space-md py-1.5 rounded font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-all">Trailing 90D</button>
+</div>
+<button class="flex items-center gap-space-xs px-space-md py-2 bg-secondary-container text-on-secondary-container hover:bg-secondary rounded font-label-caps text-label-caps uppercase font-semibold transition-all shadow-md" id="exportReportBtn">
+<span class="material-symbols-outlined text-[1rem]">download</span>
+<span>Export Metrics</span>
+</button>
+</div>
+</div>
+<!-- Primary Metric Bento Strip (5 Core Stats) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-md mb-space-xl">
+<!-- Metric 1: Total Stars -->
+<div class="relative overflow-hidden bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col justify-between group hover:bg-surface-container transition-all">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-primary/10 rounded-full blur-xl pointer-events-none group-hover:bg-primary/20 transition-all"></div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Total Synced Stars</span>
+<span class="material-symbols-outlined text-primary text-[1.25rem]">star</span>
+</div>
+<div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">1,428</span>
+<span class="font-code-sm text-code-sm text-primary font-semibold flex items-center">
+<span class="material-symbols-outlined text-[0.875rem]">trending_up</span>+34
+          </span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant/80 mt-1 flex items-center justify-between">
+<span>+2.4% vs last mo</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">4.6 stars/wk</span>
+</div>
+</div>
+</div>
+<!-- Metric 2: Primary Stack -->
+<div class="relative overflow-hidden bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col justify-between group hover:bg-surface-container transition-all">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-secondary/10 rounded-full blur-xl pointer-events-none group-hover:bg-secondary/20 transition-all"></div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Dominant Dialect</span>
+<span class="material-symbols-outlined text-secondary text-[1.25rem]">code</span>
+</div>
+<div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">Rust</span>
+<span class="font-code-sm text-code-sm text-secondary font-semibold">28.4%</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant/80 mt-1 truncate">
+          TypeScript close 2nd (24.1%)
+        </div>
+</div>
+</div>
+<!-- Metric 3: Golden Year -->
+<div class="relative overflow-hidden bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col justify-between group hover:bg-surface-container transition-all">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-tertiary-container/10 rounded-full blur-xl pointer-events-none group-hover:bg-tertiary-container/20 transition-all"></div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Apex Year</span>
+<span class="material-symbols-outlined text-tertiary text-[1.25rem]">event_available</span>
+</div>
+<div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">2024</span>
+<span class="font-code-sm text-code-sm text-on-surface font-semibold">412 repos</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant/80 mt-1">
+          Peak curiosity surge: Oct '24
+        </div>
+</div>
+</div>
+<!-- Metric 4: Repository Age -->
+<div class="relative overflow-hidden bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col justify-between group hover:bg-surface-container transition-all">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-primary-fixed-dim/10 rounded-full blur-xl pointer-events-none group-hover:bg-primary-fixed-dim/20 transition-all"></div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Avg Starred Age</span>
+<span class="material-symbols-outlined text-primary-fixed-dim text-[1.25rem]">schedule</span>
+</div>
+<div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">3.2 yrs</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant/80 mt-1">
+          Weighted mean from creation
+        </div>
+</div>
+</div>
+<!-- Metric 5: Health & Vitality -->
+<div class="relative overflow-hidden bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col justify-between group hover:bg-surface-container transition-all">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-secondary-fixed/10 rounded-full blur-xl pointer-events-none group-hover:bg-secondary-fixed/20 transition-all"></div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Maintenance Ratio</span>
+<span class="material-symbols-outlined text-primary text-[1.25rem]">health_and_safety</span>
+</div>
+<div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">92%</span>
+<span class="font-code-sm text-code-sm text-primary font-semibold">Active</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant/80 mt-1">
+          Committed in last 6 months
+        </div>
+</div>
+</div>
+</div>
+<!-- Main Visual Intelligence Grid (4 Strategic Panels) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-xl">
+<!-- Chart 1: Language Breakdown Donut (5 cols) -->
+<div class="lg:col-span-5 bg-surface-container-low rounded-xl p-space-lg shadow-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[1.25rem]">donut_large</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Language Spectrum</h2>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant bg-surface-container px-space-sm py-1 rounded">6 Languages Analyzed</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+          Proportional breakdown of primary codebase dialects across your starred infrastructure.
+        </p>
+<!-- Donut Visual + Center Readout -->
+<div class="flex flex-col sm:flex-row items-center justify-around gap-space-md my-space-md">
+<div class="relative w-44 h-44 flex items-center justify-center">
+<!-- SVG Donut Chart with segmented stroke dashes -->
+<svg class="w-full h-full -rotate-90 transform" viewbox="0 0 120 120">
+<!-- Background base ring -->
+<circle cx="60" cy="60" fill="none" r="46" stroke="#262a31" stroke-width="12"></circle>
+<!-- Rust: 28% -> circumference 289 -> stroke 80.9, offset 0 -->
+<circle class="hover:opacity-80 transition-all cursor-pointer" cx="60" cy="60" fill="none" r="46" stroke="#dea584" stroke-dasharray="82 289" stroke-dashoffset="0" stroke-width="12"></circle>
+<!-- TypeScript: 24% -> stroke 69.3, offset -82 -->
+<circle class="hover:opacity-80 transition-all cursor-pointer" cx="60" cy="60" fill="none" r="46" stroke="#3178c6" stroke-dasharray="69 289" stroke-dashoffset="-82" stroke-width="12"></circle>
+<!-- Python: 18% -> stroke 52, offset -151 -->
+<circle class="hover:opacity-80 transition-all cursor-pointer" cx="60" cy="60" fill="none" r="46" stroke="#ffcf64" stroke-dasharray="52 289" stroke-dashoffset="-151" stroke-width="12"></circle>
+<!-- Go: 14% -> stroke 40.5, offset -203 -->
+<circle class="hover:opacity-80 transition-all cursor-pointer" cx="60" cy="60" fill="none" r="46" stroke="#00ADD8" stroke-dasharray="40 289" stroke-dashoffset="-203" stroke-width="12"></circle>
+<!-- C++: 8% -> stroke 23, offset -243.5 -->
+<circle class="hover:opacity-80 transition-all cursor-pointer" cx="60" cy="60" fill="none" r="46" stroke="#f34b7d" stroke-dasharray="23 289" stroke-dashoffset="-243.5" stroke-width="12"></circle>
+<!-- Others: 8% -> stroke 23, offset -266.5 -->
+<circle class="hover:opacity-80 transition-all cursor-pointer" cx="60" cy="60" fill="none" r="46" stroke="#9b8f7c" stroke-dasharray="23 289" stroke-dashoffset="-266.5" stroke-width="12"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">1,428</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Projects</span>
+</div>
+</div>
+<!-- Color Key & Proportions -->
+<div class="grid grid-cols-2 sm:grid-cols-1 gap-y-2 gap-x-4 w-full sm:w-auto">
+<div class="flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-[#dea584]"></span>
+<span class="font-body-sm text-body-sm text-on-surface">Rust</span>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface font-semibold">28% <span class="text-on-surface-variant font-normal">(405)</span></span>
+</div>
+<div class="flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-[#3178c6]"></span>
+<span class="font-body-sm text-body-sm text-on-surface">TypeScript</span>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface font-semibold">24% <span class="text-on-surface-variant font-normal">(344)</span></span>
+</div>
+<div class="flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-body-sm text-body-sm text-on-surface">Python</span>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface font-semibold">18% <span class="text-on-surface-variant font-normal">(257)</span></span>
+</div>
+<div class="flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-[#00ADD8]"></span>
+<span class="font-body-sm text-body-sm text-on-surface">Go</span>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface font-semibold">14% <span class="text-on-surface-variant font-normal">(200)</span></span>
+</div>
+<div class="flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-[#f34b7d]"></span>
+<span class="font-body-sm text-body-sm text-on-surface">C++</span>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface font-semibold">8% <span class="text-on-surface-variant font-normal">(114)</span></span>
+</div>
+<div class="flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-outline"></span>
+<span class="font-body-sm text-body-sm text-on-surface">Others</span>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface font-semibold">8% <span class="text-on-surface-variant font-normal">(108)</span></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Footnote insight -->
+<div class="p-space-sm bg-surface-container rounded-lg flex items-center justify-between text-on-surface-variant mt-space-sm">
+<span class="font-code-sm text-code-sm flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[1rem] text-primary">insights</span>
+          Systems programming shift: +64% Rust growth over 24mo
+        </span>
+<a class="font-code-sm text-code-sm text-secondary hover:underline" href="#">Explore Rust Vault</a>
+</div>
+</div>
+<!-- Chart 2: Stargazing Timeline Velocity (7 cols) -->
+<div class="lg:col-span-7 bg-surface-container-low rounded-xl p-space-lg shadow-md flex flex-col justify-between">
+<div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[1.25rem]">stacked_line_chart</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Stargazing Frequency Timeline</h2>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-code-sm text-code-sm">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Stars / Mo
+            <span class="w-2 h-2 rounded-full bg-secondary ml-space-sm"></span> Moving 3M Avg
+          </div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+          Historical cadence showing acquisition peaks from early 2020 through Q1 2025.
+        </p>
+<!-- Dynamic Bar / Area Chart SVG Visualization -->
+<div class="relative w-full h-56 bg-surface-container-lowest rounded-lg p-space-sm flex flex-col justify-end overflow-hidden">
+<!-- Subtle horizontal grid lines -->
+<div class="absolute inset-x-0 top-1/4 h-px bg-surface-container-high/40"></div>
+<div class="absolute inset-x-0 top-2/4 h-px bg-surface-container-high/40"></div>
+<div class="absolute inset-x-0 top-3/4 h-px bg-surface-container-high/40"></div>
+<!-- Sparkline Smooth Polyline Behind (Cyan Trend) -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none" preserveaspectratio="none" viewbox="0 0 500 200">
+<defs>
+<lineargradient id="areaGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#ffcf64" stop-opacity="0.25"></stop>
+<stop offset="100%" stop-color="#ffcf64" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<polygon fill="url(#areaGradient)" points="20,180 50,165 95,150 140,160 185,130 230,110 275,120 320,80 365,45 410,55 455,30 480,40 480,190 20,190"></polygon>
+<polyline fill="none" points="20,180 50,165 95,150 140,160 185,130 230,110 275,120 320,80 365,45 410,55 455,30 480,40" stroke="#a2c9ff" stroke-linecap="round" stroke-width="2"></polyline>
+</svg>
+<!-- Interactive Bar Pillars (Monthly representations) -->
+<div class="relative z-10 flex items-end justify-between h-44 px-2 pt-4">
+<!-- 2020 -->
+<div class="flex flex-col items-center gap-1 group/bar w-full">
+<div class="w-2.5 sm:w-3.5 bg-primary/40 group-hover/bar:bg-primary rounded-t transition-all" style="height: 25%;"></div>
+<span class="font-code-sm text-[0.625rem] text-on-surface-variant/70">'20</span>
+</div>
+<!-- 2021 Q1 -->
+<div class="flex flex-col items-center gap-1 group/bar w-full">
+<div class="w-2.5 sm:w-3.5 bg-primary/40 group-hover/bar:bg-primary rounded-t transition-all" style="height: 35%;"></div>
+<span class="font-code-sm text-[0.625rem] text-on-surface-variant/70">'21.1</span>
+</div>
+<!-- 2021 Q3 -->
+<div class="flex flex-col items-center gap-1 group/bar w-full">
+<div class="w-2.5 sm:w-3.5 bg-primary/50 group-hover/bar:bg-primary rounded-t transition-all" style="height: 40%;"></div>
+<span class="font-code-sm text-[0.625rem] text-on-surface-variant/70">'21.3</span>
+</div>
+<!-- 2022 Q1 -->
+<div class="flex flex-col items-center gap-1 group/bar w-full">
+<div class="w-2.5 sm:w-3.5 bg-primary/50 group-hover/bar:bg-primary rounded-t transition-all" style="height: 48%;"></div>
+<span class="font-code-sm text-[0.625rem] text-on-surface-variant/70">'22.1</span>
+</div>
+<!-- 2022 Q3 -->
+<div class="flex flex-col items-center gap-1 group/bar w-full">
+<div class="w-2.5 sm:w-3.5 bg-primary/60 group-hover/bar:bg-primary rounded-t transition-all" style="height: 58%;"></div>
+<span class="font-code-sm text-[0.625rem] text-on-surface-variant/70">'22.3</span>
+</div>
+<!-- 2023 Q1 -->
+<div class="flex flex-col items-center gap-1 group/bar w-full">
+<div class="w-2.5 sm:w-3.5 bg-primary/60 group-hover/bar:bg-primary rounded-t transition-all" style="height: 52%;"></div>
+<span class="font-code-sm text-[0.625rem] text-on-surface-variant/70">'23.1</span>
+</div>
+<!-- 2023 Q3 -->
+<div class="flex flex-col items-center gap-1 group/bar w-full">
+<div class="w-2.5 sm:w-3.5 bg-primary/70 group-hover/bar:bg-primary rounded-t transition-all" style="height: 72%;"></div>
+<span class="font-code-sm text-[0.625rem] text-on-surface-variant/70">'23.3</span>
+</div>
+<!-- 2024 Q1 (GenAI boom) -->
+<div class="flex flex-col items-center gap-1 group/bar w-full">
+<div class="w-2.5 sm:w-3.5 bg-primary group-hover/bar:brightness-110 rounded-t shadow-sm transition-all" style="height: 88%;"></div>
+<span class="font-code-sm text-[0.625rem] text-primary font-bold">'24.1</span>
+</div>
+<!-- 2024 Q3 (Apex) -->
+<div class="flex flex-col items-center gap-1 group/bar w-full">
+<div class="w-2.5 sm:w-3.5 bg-primary group-hover/bar:brightness-110 rounded-t shadow-sm transition-all" style="height: 96%;"></div>
+<span class="font-code-sm text-[0.625rem] text-primary font-bold">'24.3</span>
+</div>
+<!-- 2024 Q4 -->
+<div class="flex flex-col items-center gap-1 group/bar w-full">
+<div class="w-2.5 sm:w-3.5 bg-primary/80 group-hover/bar:bg-primary rounded-t transition-all" style="height: 78%;"></div>
+<span class="font-code-sm text-[0.625rem] text-primary font-bold">'24.4</span>
+</div>
+<!-- 2025 Current -->
+<div class="flex flex-col items-center gap-1 group/bar w-full">
+<div class="w-2.5 sm:w-3.5 bg-secondary group-hover/bar:brightness-110 rounded-t transition-all animate-pulse" style="height: 64%;"></div>
+<span class="font-code-sm text-[0.625rem] text-secondary font-bold">2025</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-sm text-on-surface-variant font-code-sm text-code-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[0.875rem] text-secondary">bolt</span>
+          Highest spike: <strong>58 stars</strong> in October 2024 (LLM agent boom)
+        </span>
+<span class="hidden sm:inline text-on-surface-variant/60">Updated 10m ago</span>
+</div>
+</div>
+<!-- Chart 3: Maintenance Health Breakdown (6 cols) -->
+<div class="lg:col-span-6 bg-surface-container-low rounded-xl p-space-lg shadow-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[1.25rem]">verified</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Repository Health &amp; Maintenance</h2>
+</div>
+<button class="flex items-center gap-space-xs px-space-sm py-1 bg-surface-container hover:bg-surface-container-high text-primary font-label-caps text-label-caps uppercase rounded transition-all" id="quickStaleFilterBtn">
+<span class="material-symbols-outlined text-[0.875rem]">filter_alt</span>
+<span>Filter Stale (78)</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+          Distribution based on commit frequency, active issue triage, and upstream archive status.
+        </p>
+<!-- Segmented Stacked Bar Gauge -->
+<div class="w-full mb-space-md">
+<div class="flex items-center justify-between text-on-surface font-code-sm text-code-sm mb-space-xs">
+<span class="font-semibold text-primary">Active (68.4%)</span>
+<span class="text-secondary">Maintained (23.6%)</span>
+<span class="text-outline">Stale (5.5%)</span>
+<span class="text-error">Archived (2.5%)</span>
+</div>
+<div class="w-full h-3 bg-surface-container-lowest rounded-full overflow-hidden flex">
+<div class="bg-primary h-full hover:brightness-110 transition-all cursor-pointer" style="width: 68.4%;" title="Active: 976 repos"></div>
+<div class="bg-secondary h-full hover:brightness-110 transition-all cursor-pointer" style="width: 23.6%;" title="Maintained: 337 repos"></div>
+<div class="bg-outline h-full hover:brightness-110 transition-all cursor-pointer" style="width: 5.5%;" title="Stale: 78 repos"></div>
+<div class="bg-error h-full hover:brightness-110 transition-all cursor-pointer" style="width: 2.5%;" title="Archived: 37 repos"></div>
+</div>
+</div>
+<!-- Metric Details Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm">
+<div class="bg-surface-container p-space-sm rounded-lg">
+<div class="flex items-center gap-1 font-label-caps text-label-caps text-primary uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Active
+            </div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1">976</div>
+<div class="font-code-sm text-code-sm text-on-surface-variant/70">&lt; 30d commits</div>
+</div>
+<div class="bg-surface-container p-space-sm rounded-lg">
+<div class="flex items-center gap-1 font-label-caps text-label-caps text-secondary uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Maintained
+            </div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1">337</div>
+<div class="font-code-sm text-code-sm text-on-surface-variant/70">1-6mo cadence</div>
+</div>
+<div class="bg-surface-container p-space-sm rounded-lg">
+<div class="flex items-center gap-1 font-label-caps text-label-caps text-on-surface-variant uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span> Stale
+            </div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1">78</div>
+<div class="font-code-sm text-code-sm text-on-surface-variant/70">&gt; 18mo dead</div>
+</div>
+<div class="bg-surface-container p-space-sm rounded-lg">
+<div class="flex items-center gap-1 font-label-caps text-label-caps text-error uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Archived
+            </div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1">37</div>
+<div class="font-code-sm text-code-sm text-on-surface-variant/70">Read-only locks</div>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span class="text-on-surface-variant/80">37 repositories can be pruned safely</span>
+<button class="text-primary hover:underline font-code-sm text-code-sm flex items-center gap-0.5" onclick="scrollToAuditTable()">
+<span>Review prune recommendations</span>
+<span class="material-symbols-outlined text-[0.875rem]">arrow_downward</span>
+</button>
+</div>
+</div>
+<!-- Chart 4: Top Topics Word Cloud / Interactive Cluster (6 cols) -->
+<div class="lg:col-span-6 bg-surface-container-low rounded-xl p-space-lg shadow-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[1.25rem]">tag</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Top Topic Density</h2>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant bg-surface-container px-space-sm py-1 rounded">218 unique tags</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+          Weighted cluster distribution derived from GitHub repository manifest metadata.
+        </p>
+<!-- Topic Cloud Badges with variable scale and luminescence -->
+<div class="flex flex-wrap items-center gap-space-sm py-space-sm">
+<!-- 1. developer-tools (184) -->
+<a class="group px-space-md py-2 bg-surface-container hover:bg-surface-container-high rounded-xl text-primary font-headline-sm text-headline-sm font-bold flex items-center gap-space-xs transition-all shadow-sm" href="#">
+<span>#developer-tools</span>
+<span class="font-code-sm text-code-sm bg-surface-container-lowest px-1.5 py-0.5 rounded text-primary">184</span>
+</a>
+<!-- 2. cli (142) -->
+<a class="group px-space-md py-1.5 bg-surface-container hover:bg-surface-container-high rounded-lg text-secondary font-body-lg text-body-lg font-semibold flex items-center gap-space-xs transition-all" href="#">
+<span>#cli</span>
+<span class="font-code-sm text-code-sm bg-surface-container-lowest px-1.5 py-0.5 rounded text-secondary">142</span>
+</a>
+<!-- 3. llm (128) -->
+<a class="group px-space-md py-1.5 bg-primary/10 hover:bg-primary/20 rounded-lg text-primary font-body-lg text-body-lg font-bold flex items-center gap-space-xs transition-all" href="#">
+<span class="material-symbols-outlined text-[1rem]">smart_toy</span>
+<span>#llm</span>
+<span class="font-code-sm text-code-sm bg-surface-container-lowest px-1.5 py-0.5 rounded text-primary">128</span>
+</a>
+<!-- 4. rust (112) -->
+<a class="group px-space-sm py-1 bg-surface-container hover:bg-surface-container-high rounded text-on-surface font-body-md text-body-md font-medium flex items-center gap-space-xs transition-all" href="#">
+<span>#rust</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">112</span>
+</a>
+<!-- 5. react (98) -->
+<a class="group px-space-sm py-1 bg-surface-container hover:bg-surface-container-high rounded text-on-surface font-body-md text-body-md font-medium flex items-center gap-space-xs transition-all" href="#">
+<span>#react</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">98</span>
+</a>
+<!-- 6. wasm (64) -->
+<a class="group px-space-sm py-1 bg-surface-container hover:bg-surface-container-high rounded text-tertiary font-body-sm text-body-sm flex items-center gap-space-xs transition-all" href="#">
+<span>#wasm</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">64</span>
+</a>
+<!-- 7. sqlite (52) -->
+<a class="group px-space-sm py-1 bg-surface-container hover:bg-surface-container-high rounded text-on-surface font-body-sm text-body-sm flex items-center gap-space-xs transition-all" href="#">
+<span>#sqlite</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">52</span>
+</a>
+<!-- 8. docker (49) -->
+<a class="group px-space-sm py-1 bg-surface-container hover:bg-surface-container-high rounded text-on-surface font-body-sm text-body-sm flex items-center gap-space-xs transition-all" href="#">
+<span>#docker</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">49</span>
+</a>
+<!-- Secondary tags -->
+<a class="px-space-sm py-0.5 bg-surface-container-lowest rounded text-on-surface-variant font-code-sm text-code-sm hover:text-primary transition-all" href="#">#kubernetes (41)</a>
+<a class="px-space-sm py-0.5 bg-surface-container-lowest rounded text-on-surface-variant font-code-sm text-code-sm hover:text-primary transition-all" href="#">#graphql (38)</a>
+<a class="px-space-sm py-0.5 bg-surface-container-lowest rounded text-on-surface-variant font-code-sm text-code-sm hover:text-primary transition-all" href="#">#tailwind (34)</a>
+<a class="px-space-sm py-0.5 bg-surface-container-lowest rounded text-on-surface-variant font-code-sm text-code-sm hover:text-primary transition-all" href="#">#security (29)</a>
+</div>
+</div>
+<div class="mt-space-md p-space-sm bg-surface-container rounded-lg flex items-center justify-between text-on-surface-variant">
+<span class="font-code-sm text-code-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[1rem] text-secondary">bubble_chart</span>
+          Core interest centroid: <strong>Dev Experience &amp; Local AI</strong>
+</span>
+<button class="font-code-sm text-code-sm text-primary hover:underline">Manage All Tags</button>
+</div>
+</div>
+</div>
+<!-- Deep Audit Section: Stale Stars Cleaner Table -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-xl mb-space-xl" id="staleAuditSection">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md mb-space-lg">
+<div>
+<div class="flex items-center gap-space-sm mb-space-xs">
+<span class="material-symbols-outlined text-error text-[1.5rem]">cleaning_services</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Stale Stars Cleaner &amp; Audit Hub</h2>
+<span class="px-2 py-0.5 bg-error-container text-on-error-container font-label-caps text-label-caps uppercase rounded font-bold">115 flagged repos</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Repositories starred &gt; 2 years ago that are either officially archived or haven’t received a commit in 18+ months.
+        </p>
+</div>
+<!-- Action Group -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="flex items-center gap-space-xs bg-surface-container px-space-md py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-on-surface-variant text-[1rem]">tune</span>
+<select class="bg-transparent text-on-surface font-code-sm text-code-sm focus:outline-none cursor-pointer" id="staleFilterType">
+<option class="bg-surface-container" value="all">Show All Flagged (115)</option>
+<option class="bg-surface-container" value="archived">Archived Only (37)</option>
+<option class="bg-surface-container" value="dormant">0 Commits &gt; 18mo (78)</option>
+</select>
+</div>
+<button class="flex items-center gap-space-xs px-space-md py-2 bg-error text-on-error hover:bg-error-container hover:text-on-error-container font-label-caps text-label-caps uppercase font-bold rounded transition-all shadow-md" id="batchUnstarBtn">
+<span class="material-symbols-outlined text-[1rem]">star_half</span>
+<span>Batch Clean Selected (<span id="selectedCount">0</span>)</span>
+</button>
+</div>
+</div>
+<!-- Data Table Container -->
+<div class="overflow-x-auto rounded-lg">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider">
+<th class="py-space-md px-space-md w-12 text-center">
+<input class="w-4 h-4 rounded bg-surface-container-lowest text-primary focus:ring-0 cursor-pointer" id="selectAllCheckbox" type="checkbox"/>
+</th>
+<th class="py-space-md px-space-md">Repository</th>
+<th class="py-space-md px-space-md">Starred On</th>
+<th class="py-space-md px-space-md">Last Commit</th>
+<th class="py-space-md px-space-md">Status</th>
+<th class="py-space-md px-space-md">Stars</th>
+<th class="py-space-md px-space-md text-right">Recommendation</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-highest/20 font-body-md text-body-md text-on-surface">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-space-md px-space-md text-center">
+<input class="row-checkbox w-4 h-4 rounded bg-surface-container-lowest text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-space-md px-space-md min-w-[280px]">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[1.25rem] mt-0.5">folder_zip</span>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="text-on-surface-variant font-body-sm text-body-sm">facebookincubator/</span>
+<a class="font-headline-sm text-headline-sm text-secondary hover:underline font-semibold" href="#">create-react-kotlin-app</a>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant/80 line-clamp-1">
+                    Create React apps with no build configuration using Kotlin.
+                  </p>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md font-code-sm text-code-sm text-on-surface-variant whitespace-nowrap">
+              Mar 14, 2021
+            </td>
+<td class="py-space-md px-space-md font-code-sm text-code-sm text-error whitespace-nowrap">
+              4 yrs ago (2020)
+            </td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded bg-error-container text-on-error-container font-label-caps text-label-caps uppercase font-bold">
+<span class="material-symbols-outlined text-[0.875rem]">archive</span> Archived
+              </span>
+</td>
+<td class="py-space-md px-space-md font-code-sm text-code-sm text-on-surface-variant whitespace-nowrap">
+              1,248
+            </td>
+<td class="py-space-md px-space-md text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-1 bg-surface-container-highest hover:bg-surface-container text-on-surface font-label-caps text-label-caps uppercase rounded transition-all">Keep</button>
+<button class="px-space-sm py-1 bg-error/20 text-error hover:bg-error hover:text-on-error font-label-caps text-label-caps uppercase rounded transition-all">Unstar</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-space-md px-space-md text-center">
+<input class="row-checkbox w-4 h-4 rounded bg-surface-container-lowest text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-space-md px-space-md min-w-[280px]">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[1.25rem] mt-0.5">terminal</span>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="text-on-surface-variant font-body-sm text-body-sm">ogham/</span>
+<a class="font-headline-sm text-headline-sm text-secondary hover:underline font-semibold" href="#">exa</a>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant/80 line-clamp-1">
+                    A modern replacement for ls written in Rust. (Successor is eza).
+                  </p>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md font-code-sm text-code-sm text-on-surface-variant whitespace-nowrap">
+              Aug 02, 2020
+            </td>
+<td class="py-space-md px-space-md font-code-sm text-code-sm text-error whitespace-nowrap">
+              2.5 yrs ago (2022)
+            </td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded bg-error-container text-on-error-container font-label-caps text-label-caps uppercase font-bold">
+<span class="material-symbols-outlined text-[0.875rem]">archive</span> Archived
+              </span>
+</td>
+<td class="py-space-md px-space-md font-code-sm text-code-sm text-on-surface-variant whitespace-nowrap">
+              23,410
+            </td>
+<td class="py-space-md px-space-md text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-1 bg-surface-container-highest hover:bg-surface-container text-on-surface font-label-caps text-label-caps uppercase rounded transition-all">Keep</button>
+<button class="px-space-sm py-1 bg-error/20 text-error hover:bg-error hover:text-on-error font-label-caps text-label-caps uppercase rounded transition-all">Unstar</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-space-md px-space-md text-center">
+<input class="row-checkbox w-4 h-4 rounded bg-surface-container-lowest text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-space-md px-space-md min-w-[280px]">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[1.25rem] mt-0.5">dns</span>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="text-on-surface-variant font-body-sm text-body-sm">hyperium/</span>
+<a class="font-headline-sm text-headline-sm text-secondary hover:underline font-semibold" href="#">tokio-proto</a>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant/80 line-clamp-1">
+                    A generalized protocol framework for Tokio based servers. Deprecated in favor of tower.
+                  </p>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md font-code-sm text-code-sm text-on-surface-variant whitespace-nowrap">
+              Jan 19, 2021
+            </td>
+<td class="py-space-md px-space-md font-code-sm text-code-sm text-outline whitespace-nowrap">
+              3 yrs ago (2021)
+            </td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-caps text-label-caps uppercase font-bold">
+<span class="material-symbols-outlined text-[0.875rem]">bedtime</span> Dormant
+              </span>
+</td>
+<td class="py-space-md px-space-md font-code-sm text-code-sm text-on-surface-variant whitespace-nowrap">
+              640
+            </td>
+<td class="py-space-md px-space-md text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-1 bg-surface-container-highest hover:bg-surface-container text-on-surface font-label-caps text-label-caps uppercase rounded transition-all">Keep</button>
+<button class="px-space-sm py-1 bg-error/20 text-error hover:bg-error hover:text-on-error font-label-caps text-label-caps uppercase rounded transition-all">Unstar</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-space-md px-space-md text-center">
+<input class="row-checkbox w-4 h-4 rounded bg-surface-container-lowest text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-space-md px-space-md min-w-[280px]">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[1.25rem] mt-0.5">code_blocks</span>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="text-on-surface-variant font-body-sm text-body-sm">zeit/</span>
+<a class="font-headline-sm text-headline-sm text-secondary hover:underline font-semibold" href="#">hyperterm</a>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant/80 line-clamp-1">
+                    HTML/JS/CSS terminal web emulator. Rebranded to Hyper under Vercel umbrella.
+                  </p>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md font-code-sm text-code-sm text-on-surface-variant whitespace-nowrap">
+              May 10, 2020
+            </td>
+<td class="py-space-md px-space-md font-code-sm text-code-sm text-error whitespace-nowrap">
+              5 yrs ago (2019)
+            </td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded bg-error-container text-on-error-container font-label-caps text-label-caps uppercase font-bold">
+<span class="material-symbols-outlined text-[0.875rem]">archive</span> Archived
+              </span>
+</td>
+<td class="py-space-md px-space-md font-code-sm text-code-sm text-on-surface-variant whitespace-nowrap">
+              34,120
+            </td>
+<td class="py-space-md px-space-md text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-1 bg-surface-container-highest hover:bg-surface-container text-on-surface font-label-caps text-label-caps uppercase rounded transition-all">Keep</button>
+<button class="px-space-sm py-1 bg-error/20 text-error hover:bg-error hover:text-on-error font-label-caps text-label-caps uppercase rounded transition-all">Unstar</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Audit Pagination & Bulk Status -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md mt-space-md pt-space-sm text-on-surface-variant">
+<div class="font-body-sm text-body-sm">
+        Showing <span class="font-code-sm text-code-sm text-on-surface font-semibold">1-4</span> of <span class="font-code-sm text-code-sm text-on-surface font-semibold">115</span> flagged stale repositories
+      </div>
+<div class="flex items-center gap-space-xs font-code-sm text-code-sm">
+<button class="px-space-sm py-1 bg-surface-container hover:bg-surface-container-high rounded text-on-surface-variant transition-all disabled:opacity-40" disabled="">Previous</button>
+<span class="px-space-sm py-1 bg-primary text-on-primary rounded font-bold">1</span>
+<button class="px-space-sm py-1 bg-surface-container hover:bg-surface-container-high rounded text-on-surface transition-all">2</button>
+<button class="px-space-sm py-1 bg-surface-container hover:bg-surface-container-high rounded text-on-surface transition-all">3</button>
+<button class="px-space-sm py-1 bg-surface-container hover:bg-surface-container-high rounded text-on-surface transition-all">Next</button>
+</div>
+</div>
+</div>
+<!-- Bottom Insight Cards Mosaic -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md mb-space-lg">
+<!-- Star Velocity Trend -->
+<div class="bg-surface-container-low p-space-md rounded-xl shadow-md">
+<div class="flex items-center gap-space-xs text-primary font-label-caps text-label-caps uppercase mb-space-xs">
+<span class="material-symbols-outlined text-[1rem]">speed</span>
+<span>Velocity Profile</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Accelerating Curator</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+        You starred 38% more repositories in 2024 than in 2023. Top acceleration domain was <span class="text-secondary font-semibold">AI Infrastructure</span>.
+      </p>
+</div>
+<!-- Maintenance Index Score -->
+<div class="bg-surface-container-low p-space-md rounded-xl shadow-md">
+<div class="flex items-center gap-space-xs text-secondary font-label-caps text-label-caps uppercase mb-space-xs">
+<span class="material-symbols-outlined text-[1rem]">shield_with_heart</span>
+<span>Ecosystem Vitality</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Grade A (92/100)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+        Only 8% of your starred portfolio is abandoned. The global GitHub developer portfolio average is 24% stale.
+      </p>
+</div>
+<!-- Stargazing Persona -->
+<div class="bg-surface-container-low p-space-md rounded-xl shadow-md">
+<div class="flex items-center gap-space-xs text-tertiary font-label-caps text-label-caps uppercase mb-space-xs">
+<span class="material-symbols-outlined text-[1rem]">psychology</span>
+<span>Curator Archetype</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Systems &amp; Tooling Builder</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+        Strong bias toward compiled CLI binaries, terminal enhancers, and local-first data architecture.
+      </p>
+</div>
+</div>
+</div>
+<script>
+  // Simple interactive handlers for Stale Stars table and filters
+  function scrollToAuditTable() {
+    const el = document.getElementById('staleAuditSection');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  // Checkbox management for batch cleaner
+  const selectAll = document.getElementById('selectAllCheckbox');
+  const rowCheckboxes = document.querySelectorAll('.row-checkbox');
+  const countDisplay = document.getElementById('selectedCount');
+
+  function updateSelectedCount() {
+    const checkedCount = document.querySelectorAll('.row-checkbox:checked').length;
+    if (countDisplay) countDisplay.textContent = checkedCount;
+  }
+
+  if (selectAll) {
+    selectAll.addEventListener('change', (e) => {
+      rowCheckboxes.forEach(cb => {
+        cb.checked = e.target.checked;
+      });
+      updateSelectedCount();
+    });
+  }
+
+  rowCheckboxes.forEach(cb => {
+    cb.addEventListener('change', updateSelectedCount);
+  });
+
+  // Filter jump button
+  const quickStaleBtn = document.getElementById('quickStaleFilterBtn');
+  if (quickStaleBtn) {
+    quickStaleBtn.addEventListener('click', () => {
+      scrollToAuditTable();
+      const select = document.getElementById('staleFilterType');
+      if (select) select.value = 'dormant';
+    });
+  }
+
+  // Export mock trigger
+  const exportBtn = document.getElementById('exportReportBtn');
+  if (exportBtn) {
+    exportBtn.addEventListener('click', () => {
+      const origText = exportBtn.innerHTML;
+      exportBtn.innerHTML = '<span class="material-symbols-outlined text-[1rem] animate-spin">refresh</span><span>Generating...</span>';
+      setTimeout(() => {
+        exportBtn.innerHTML = '<span class="material-symbols-outlined text-[1rem]">check</span><span>Report Ready</span>';
+        setTimeout(() => {
+          exportBtn.innerHTML = origText;
+        }, 2000);
+      }, 900);
+    });
+  }
+</script></main></div></body></html>
