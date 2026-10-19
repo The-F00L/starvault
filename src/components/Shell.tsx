@@ -221,13 +221,25 @@ function Sidebar({ open, onClose }: { open: boolean; onClose: () => void }) {
             <span className={cx("w-2 h-2 rounded-full", error ? "bg-error" : "bg-primary animate-pulse")} />
             {error ? "Sync failed" : settings.lastSyncedAt ? "Engine Ready" : "Demo Mode"}
           </span>
-          <span className="opacity-50">v0.1.0</span>
+          <a
+            href={SOURCE_URL}
+            target="_blank"
+            rel="noreferrer"
+            title="StarVault on GitHub: source, issues and self-hosting"
+            className="flex items-center gap-1 opacity-70 hover:opacity-100 hover:text-on-surface"
+          >
+            <Icon name="code" className="text-[1rem]" />
+            GitHub · v0.1.0
+          </a>
         </div>
       </aside>
       <CollectionDialog open={creating} onClose={() => setCreating(false)} onSaved={(c) => navigate(`/collections/${c.id}`)} />
     </>
   );
 }
+
+/** The open-source repository: source, issues and the self-hosting guide. */
+const SOURCE_URL = "https://github.com/The-F00L/starvault";
 
 export function Shell({ children }: { children: ReactNode }) {
   const [menuOpen, setMenuOpen] = useState(false);
