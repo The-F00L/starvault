@@ -264,7 +264,7 @@ export function StarsPage({ mode }: { mode: "all" | "recent" | "language" | "col
   );
 }
 
-function CollectionHeader({ collection, repos }: { collection: Collection; repos: Repo[] }) {
+export function CollectionHeader({ collection, repos }: { collection: Collection; repos: Repo[] }) {
   const navigate = useNavigate();
   const settings = useSettings();
   const { attempt, notify } = useToast();
@@ -295,16 +295,13 @@ function CollectionHeader({ collection, repos }: { collection: Collection; repos
         </div>
       </div>
       <div className="flex flex-wrap gap-2">
-        {url ? (
+        <Button variant="accent" icon="share" onClick={copyShareLink} disabled={repos.length === 0}>
+          Copy share link
+        </Button>
+        {url && (
           <a href={url} target="_blank" rel="noreferrer">
-            <Button variant="accent" icon="share">
-              Share (GitHub List)
-            </Button>
+            <Button icon="open_in_new">Open on GitHub</Button>
           </a>
-        ) : (
-          <Button variant="accent" icon="share" onClick={copyShareLink} disabled={repos.length === 0}>
-            Copy share link
-          </Button>
         )}
         <Button
           icon={copied ? "check" : "markdown"}
