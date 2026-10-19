@@ -1,0 +1,11 @@
+node_modules
+dist
+dist-server
+data
+.e2e-data
+.env*
+!.env.example
+.dev.vars
+.wrangler
+.git
+*.tsbuildinfo

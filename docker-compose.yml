@@ -1,0 +1,11 @@
+services:
+  starvault:
+    # The image CI publishes from main. To build from this checkout instead, replace this line with `build: .`.
+    image: ghcr.io/the-f00l/starvault:latest
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./data:/data
+    # Host loopback only. Publish to your tailnet with `tailscale serve`; never expose this port publicly.
+    ports:
+      - "127.0.0.1:8787:8787"

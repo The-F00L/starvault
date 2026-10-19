@@ -1,0 +1,33 @@
+// GitHub linguist colors for the languages most likely to show up.
+const COLORS: Record<string, string> = {
+  TypeScript: "#3178c6",
+  JavaScript: "#f1e05a",
+  Python: "#3572A5",
+  Rust: "#dea584",
+  Go: "#00ADD8",
+  "C++": "#f34b7d",
+  C: "#555555",
+  "C#": "#178600",
+  Java: "#b07219",
+  Kotlin: "#A97BFF",
+  Swift: "#F05138",
+  Ruby: "#701516",
+  PHP: "#4F5D95",
+  Zig: "#ec915c",
+  Lua: "#000080",
+  Shell: "#89e051",
+  Nix: "#7e7eff",
+  Elixir: "#6e4a7e",
+  Haskell: "#5e5086",
+  Svelte: "#ff3e00",
+  Vue: "#41b883",
+  HTML: "#e34c26",
+  CSS: "#563d7c",
+  Dart: "#00B4AB",
+  Scala: "#c22d40",
+  OCaml: "#ef7a08",
+  "Jupyter Notebook": "#DA5B0B",
+  MDX: "#fcb32c",
+};
+
+export const languageColor = (lang: string | null) => (lang && COLORS[lang]) || "#9b8f7c";
