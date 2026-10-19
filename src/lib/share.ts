@@ -85,4 +85,5 @@ export async function decodeCollection(encoded: string): Promise<SharedCollectio
 }
 
 export const collectionShareUrl = (encoded: string) => `${shareOrigin()}/shared#${encoded}`;
+export const profileShareUrl = (username: string) => `${shareOrigin()}/u/${encodeURIComponent(username)}`;
 export { toBase64Url as __toBase64Url };

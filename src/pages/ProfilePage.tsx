@@ -7,6 +7,7 @@ import { useRepos, useSettings } from "../hooks/useVault";
 import { fetchLists, fetchStarred, fetchUser } from "../lib/api";
 import { fullNumber } from "../lib/format";
 import { LOGIN } from "../lib/github";
+import { profileShareUrl } from "../lib/share";
 import { filterRepos, languageCounts, sortRepos } from "../lib/stats";
 import { Pager } from "./StarsPage";
 
@@ -64,7 +65,7 @@ export function ProfilePage() {
             icon={copied ? "check" : "share"}
             variant="accent"
             onClick={async () => {
-              await navigator.clipboard.writeText(location.href.split("#")[0]);
+              await navigator.clipboard.writeText(profileShareUrl(username));
               setCopied(true);
               setTimeout(() => setCopied(false), 1500);
             }}

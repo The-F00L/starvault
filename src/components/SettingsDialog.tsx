@@ -5,11 +5,11 @@ import { useInstance, useRemoteStatus } from "../hooks/useInstance";
 import { db, exportVault, importVault, saveSettings } from "../lib/db";
 import { LOGIN } from "../lib/github";
 import { relativeTime } from "../lib/format";
-import { shareOrigin, type Instance } from "../lib/instance";
+import type { Instance } from "../lib/instance";
+import { profileShareUrl } from "../lib/share";
 import { remote } from "../lib/startup";
 import { Button, Field, Icon, inputClass, Modal } from "./ui";
 
-export const profileShareUrl = (username: string) => `${shareOrigin()}/u/${encodeURIComponent(username)}`;
 
 type SelfHosted = Extract<Instance, { mode: "self-hosted" }>;
 
